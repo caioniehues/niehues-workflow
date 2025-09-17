@@ -1,0 +1,6 @@
+ruleDirs:
+- /home/caio/Developer/niehues-workflow/rules
+testConfigs:
+- testDir: /home/caio/Developer/niehues-workflow/rule-tests
+utilDirs:
+- /home/caio/Developer/niehues-workflow/utils

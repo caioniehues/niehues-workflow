@@ -1,0 +1,143 @@
+# Project Constitution
+**Created**: {{timestamp}}
+**Project**: {{project_name}}
+
+## Immutable Principles
+
+These principles form the bedrock of our development process and cannot be violated under any circumstances:
+
+### 1. Test-Driven Development (TDD) is Mandatory
+- **Principle**: No code shall be written without tests written first
+- **Enforcement**: Constitutional enforcer blocks any code without corresponding tests
+- **Rationale**: Quality is built in, not tested in
+- **Metrics**: Minimum {{test_coverage_min}}% test coverage required
+
+### 2. Constitutional Compliance is Non-Negotiable
+- **Principle**: All development must comply with constitutional principles
+- **Enforcement**: Automated validation on every commit
+- **Rationale**: Consistency and quality across all contributions
+- **Metrics**: 100% compliance required
+
+### 3. Context Preservation is Critical
+- **Principle**: Every task must have sufficient context to be self-contained
+- **Enforcement**: Context embedding in all task files
+- **Rationale**: Reduce context switching and knowledge loss
+- **Metrics**: {{min_context_lines}}-{{max_context_lines}} lines of context per task
+
+### 4. Questioning Until Confidence
+- **Principle**: Continue asking questions until {{confidence_threshold}}% confidence
+- **Enforcement**: No limits on clarification rounds
+- **Rationale**: Ambiguity leads to rework
+- **Metrics**: Average confidence score tracked
+
+### 5. Document Sharding for Clarity
+- **Principle**: Large documents must be sharded into <500 line chunks
+- **Enforcement**: Automatic sharding of specifications
+- **Rationale**: Manageable cognitive load
+- **Metrics**: No file exceeds 500 lines
+
+## Project Values
+{{#each project_values}}
+### {{name}}
+{{description}}
+{{/each}}
+
+## Development Standards
+
+### Code Quality
+- **Maximum file size**: {{max_file_lines}} lines
+- **Maximum function complexity**: {{cyclomatic_function}}
+- **Maximum nesting depth**: {{max_nesting_depth}}
+- **Required documentation**: All public APIs must be documented
+
+### Testing Requirements
+- **Unit tests**: Required for all functions/methods
+- **Integration tests**: Required for all module interactions
+- **E2E tests**: Required for all user-facing features
+- **Coverage minimum**: {{test_coverage_min}}%
+
+### Branching Strategy
+**Selected Strategy**: {{branching_strategy}}
+
+{{#if (eq branching_strategy "git-flow")}}
+- Main branches: main, develop
+- Feature branches: feature/*
+- Release branches: release/*
+- Hotfix branches: hotfix/*
+{{/if}}
+
+{{#if (eq branching_strategy "github-flow")}}
+- Single main branch: main
+- Feature branches: Direct from main
+- Deploy from feature branches
+- Merge to main after review
+{{/if}}
+
+{{#if (eq branching_strategy "gitlab-flow")}}
+- Environment branches: production, staging
+- Feature branches: From main
+- Deploy through environments
+{{/if}}
+
+{{#if (eq branching_strategy "trunk-based")}}
+- Single trunk: main
+- Short-lived feature branches (<1 day)
+- Feature flags for incomplete features
+{{/if}}
+
+### Commit Standards
+**Format**: {{commit_format}}
+
+{{#if (eq commit_format "conventional-commits")}}
+Pattern: `<type>(<scope>): <subject>`
+Types: feat, fix, docs, style, refactor, test, chore
+{{/if}}
+
+## Architecture Principles
+{{#each architecture_principles}}
+### {{principle}}
+- **Rationale**: {{rationale}}
+- **Implications**: {{implications}}
+{{/each}}
+
+## Enforcement Mechanisms
+
+### 1. Pre-Commit Hooks
+- Validate TDD compliance
+- Check test coverage
+- Lint code
+- Format code
+
+### 2. Pre-Push Hooks
+- Run full test suite
+- Check coverage thresholds
+- Security scanning
+- Performance checks
+
+### 3. CI/CD Pipeline
+- Constitutional validation
+- Full test execution
+- Coverage reporting
+- Security audit
+- Performance benchmarks
+
+### 4. Agent Boundaries
+- SpecificationMaster: Can only create specs
+- TestArchitect: Can only write tests
+- ImplementationEngineer: Can only write code with tests
+- QualityGuardian: Can only validate and report
+
+## Amendment Process
+
+Constitutional amendments require:
+1. Proposal with detailed rationale
+2. Team discussion and consensus
+3. Trial period (2 weeks minimum)
+4. Retrospective and decision
+5. Update to this document with version increment
+
+## Version History
+- v1.0.0 - {{timestamp}} - Initial constitution
+
+---
+*This constitution is enforced automatically by the Nexus Enhanced Workflow system.*

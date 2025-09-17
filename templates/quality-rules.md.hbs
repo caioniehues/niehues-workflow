@@ -1,0 +1,242 @@
+# Quality Rules
+**Project**: {{project_name}}
+**Effective Date**: {{timestamp}}
+**Enforcement**: Automated via Nexus Workflow
+
+## Code Quality Standards
+
+### 1. Test Coverage Requirements
+- **Minimum Overall Coverage**: {{test_coverage_min}}%
+- **New Code Coverage**: 100%
+- **Branch Coverage**: {{test_coverage_min}}%
+- **Function Coverage**: {{test_coverage_min}}%
+
+**Enforcement**: Pre-commit hooks block commits below threshold
+
+### 2. Complexity Limits
+- **Cyclomatic Complexity per Function**: ≤{{cyclomatic_function}}
+- **Cognitive Complexity per Function**: ≤15
+- **Maximum Function Length**: 50 lines
+- **Maximum File Length**: {{max_file_lines}} lines
+- **Maximum Class Length**: 300 lines
+- **Maximum Parameters**: 4
+
+**Enforcement**: Linter rules and pre-commit validation
+
+### 3. Code Style Standards
+- **Indentation**: 2 spaces (no tabs)
+- **Line Length**: 100 characters maximum
+- **File Naming**: kebab-case for files, PascalCase for classes
+- **Variable Naming**: camelCase for variables, UPPER_SNAKE for constants
+- **Function Naming**: camelCase, descriptive verbs
+
+**Enforcement**: Prettier/ESLint auto-formatting on save
+
+### 4. Documentation Requirements
+
+#### Required Documentation
+- **Every Public Function**: JSDoc with description, parameters, returns
+- **Every Class**: Class-level documentation with purpose
+- **Every Module**: Module-level documentation with exports
+- **Complex Logic**: Inline comments explaining "why"
+- **Every Test**: Description of what is being tested and why
+
+#### Documentation Format
+```typescript
+/**
+ * Brief description of what the function does.
+ *
+ * @param {Type} paramName - Description of parameter
+ * @returns {Type} Description of return value
+ * @throws {ErrorType} When this error occurs
+ * @example
+ * // Example usage
+ * const result = functionName(param);
+ */
+```
+
+**Enforcement**: Documentation linter, PR review checklist
+
+## Testing Standards
+
+### 1. Test Structure
+- **AAA Pattern**: Arrange, Act, Assert
+- **One Assertion per Test**: Clear failure identification
+- **Descriptive Names**: `should_[expectedBehavior]_when_[condition]`
+- **Test Independence**: No shared state between tests
+- **Test Speed**: Unit tests <100ms, Integration <1s
+
+### 2. Test Categories
+
+#### Unit Tests (70% of tests)
+- Test single functions/methods
+- Mock all dependencies
+- Cover edge cases
+- Test error conditions
+
+#### Integration Tests (20% of tests)
+- Test module interactions
+- Use real dependencies where possible
+- Test data flow
+- Verify contracts
+
+#### E2E Tests (10% of tests)
+- Test critical user journeys
+- Full system testing
+- Performance validation
+- Security validation
+
+### 3. TDD Cycle Enforcement
+```
+1. RED: Write failing test first
+2. GREEN: Write minimal code to pass
+3. REFACTOR: Improve code while keeping tests green
+```
+
+**Enforcement**: Constitutional enforcer blocks code without tests
+
+## Security Standards
+
+### 1. Input Validation
+- **All User Input**: Must be validated and sanitized
+- **Type Checking**: Runtime type validation for external data
+- **Boundary Checking**: Validate ranges and limits
+- **Injection Prevention**: Parameterized queries, escape HTML
+
+### 2. Authentication & Authorization
+- **No Hardcoded Secrets**: Use environment variables
+- **Secure Storage**: Encrypt sensitive data at rest
+- **Session Management**: Secure, httpOnly, sameSite cookies
+- **Password Policy**: Minimum 12 characters, complexity rules
+
+### 3. Dependencies
+- **Regular Audits**: Weekly vulnerability scanning
+- **Version Pinning**: Exact versions in lock files
+- **Minimal Dependencies**: Justify each addition
+- **License Compliance**: Only approved licenses
+
+**Enforcement**: Security scanning in CI/CD pipeline
+
+## Performance Standards
+
+### 1. Response Times
+- **API Endpoints**: <100ms p95
+- **Database Queries**: <50ms p95
+- **Page Load**: <3s on 3G
+- **Time to Interactive**: <5s
+
+### 2. Resource Usage
+- **Memory**: No memory leaks
+- **CPU**: <80% utilization under normal load
+- **Bundle Size**: <200KB gzipped initial
+- **Image Optimization**: WebP with fallbacks
+
+### 3. Scalability
+- **Horizontal Scaling**: Stateless design
+- **Caching Strategy**: Multi-level caching
+- **Database Optimization**: Indexed queries
+- **Connection Pooling**: Reuse connections
+
+**Enforcement**: Performance benchmarks in CI
+
+## Code Review Standards
+
+### 1. Review Checklist
+- [ ] Tests exist and pass
+- [ ] Coverage maintained/improved
+- [ ] No TODO/FIXME comments
+- [ ] Documentation complete
+- [ ] Security considerations addressed
+- [ ] Performance impact assessed
+- [ ] Accessibility requirements met
+- [ ] Error handling comprehensive
+
+### 2. Review Response Time
+- **Initial Review**: Within 24 hours
+- **Follow-up**: Within 4 hours
+- **Blocking Issues**: Immediate escalation
+
+### 3. Approval Requirements
+- **Minimum Approvers**: 1 for features, 2 for architecture changes
+- **Self-Merge**: Not allowed
+- **Stale PR**: Auto-close after 7 days of inactivity
+
+## Refactoring Standards
+
+### 1. When to Refactor
+- **Rule of Three**: Third duplication triggers refactoring
+- **Complexity Threshold**: When exceeding limits
+- **Performance Issues**: When benchmarks fail
+- **Technical Debt**: Scheduled refactoring sprints
+
+### 2. Refactoring Process
+1. Ensure comprehensive test coverage
+2. Create refactoring branch
+3. Small, atomic commits
+4. Maintain green tests throughout
+5. Performance comparison before/after
+6. Document significant changes
+
+## Anti-Patterns to Avoid
+
+### 1. Code Smells
+- **God Classes**: Classes doing too much
+- **Long Methods**: Functions over 50 lines
+- **Deep Nesting**: More than 3 levels
+- **Magic Numbers**: Use named constants
+- **Dead Code**: Remove unused code immediately
+- **Copy-Paste**: Extract common functionality
+
+### 2. Testing Anti-Patterns
+- **Test Interdependence**: Tests requiring order
+- **Slow Tests**: Unit tests taking >100ms
+- **Flaky Tests**: Non-deterministic results
+- **Testing Implementation**: Test behavior, not implementation
+- **Insufficient Coverage**: Below threshold
+- **Missing Edge Cases**: Happy path only
+
+### 3. Development Anti-Patterns
+- **Premature Optimization**: Profile first
+- **Over-Engineering**: YAGNI principle
+- **Under-Engineering**: Cutting corners
+- **Knowledge Silos**: Single person dependency
+- **Manual Processes**: Automate repetitive tasks
+- **Ignoring Warnings**: Zero warning policy
+
+## Continuous Improvement
+
+### 1. Metrics Tracking
+- **Code Coverage Trend**: Must increase or maintain
+- **Complexity Trend**: Must decrease or maintain
+- **Performance Trend**: Must improve or maintain
+- **Bug Discovery Rate**: Must decrease
+- **Technical Debt**: Must decrease
+
+### 2. Regular Reviews
+- **Weekly**: Metrics review
+- **Bi-weekly**: Code quality retrospective
+- **Monthly**: Standards revision
+- **Quarterly**: Major refactoring planning
+
+## Enforcement Matrix
+
+| Rule | Pre-Commit | CI/CD | PR Review | Production |
+|------|------------|-------|-----------|------------|
+| Test Coverage | ✓ | ✓ | ✓ | Monitoring |
+| Code Complexity | ✓ | ✓ | ✓ | - |
+| Documentation | - | ✓ | ✓ | - |
+| Security | - | ✓ | ✓ | Scanning |
+| Performance | - | ✓ | ✓ | Monitoring |
+| Code Style | ✓ | ✓ | - | - |
+
+## Exceptions Process
+
+Exceptions to these rules require:
+1. Written justification
+2. Team discussion
+3. Time-boxed exemption
+4. Remediation plan
+5. Documentation in code
+
+---
+*These quality rules are enforced automatically. Violations will block progress until resolved.*
