@@ -1,0 +1,685 @@
+{
+  "templates": [
+    {
+      "id": "req-core-purpose",
+      "template": "What is the core purpose of {topic}?",
+      "category": "requirements",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["req-user-needs", "req-success-criteria"]
+    },
+    {
+      "id": "req-user-needs",
+      "template": "Who are the primary users of {topic} and what specific needs does it address for them?",
+      "category": "requirements",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["req-user-journey"]
+    },
+    {
+      "id": "req-success-criteria",
+      "template": "How will we measure the success of {topic}? What are the specific metrics or outcomes?",
+      "category": "requirements",
+      "phase": ["brainstorm", "specify"],
+      "priority": "critical",
+      "followUps": ["req-acceptance-criteria"]
+    },
+    {
+      "id": "req-acceptance-criteria",
+      "template": "What are the detailed acceptance criteria for {topic}? Please provide specific Given-When-Then scenarios.",
+      "category": "requirements",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "req-user-journey",
+      "template": "Can you describe the complete user journey for {topic} from start to finish?",
+      "category": "requirements",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["req-user-pain-points"]
+    },
+    {
+      "id": "req-user-pain-points",
+      "template": "What pain points or frustrations might users experience with {topic}?",
+      "category": "requirements",
+      "phase": ["brainstorm"],
+      "priority": "medium",
+      "followUps": ["edge-user-errors"]
+    },
+    {
+      "id": "req-mvp-scope",
+      "template": "What is the minimum viable scope for {topic}? What features are absolutely essential vs nice-to-have?",
+      "category": "requirements",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["req-feature-priority"]
+    },
+    {
+      "id": "req-feature-priority",
+      "template": "How would you prioritize the features of {topic} using MoSCoW (Must/Should/Could/Won't)?",
+      "category": "requirements",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "con-technical",
+      "template": "What are the technical constraints for {topic}? (e.g., technology stack, platform limitations, integration requirements)",
+      "category": "constraints",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["con-dependencies", "con-compatibility"]
+    },
+    {
+      "id": "con-dependencies",
+      "template": "What external dependencies does {topic} have? Which systems, services, or libraries must it integrate with?",
+      "category": "constraints",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["con-api-contracts"]
+    },
+    {
+      "id": "con-api-contracts",
+      "template": "What are the specific API contracts or interfaces that {topic} must conform to?",
+      "category": "constraints",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "con-compatibility",
+      "template": "What backward compatibility requirements exist for {topic}? What versions or standards must be supported?",
+      "category": "constraints",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "con-resources",
+      "template": "What are the resource constraints for {topic}? Consider budget, timeline, team size, and expertise.",
+      "category": "constraints",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["con-timeline", "con-team"]
+    },
+    {
+      "id": "con-timeline",
+      "template": "What is the specific timeline for {topic}? Are there any hard deadlines or milestones?",
+      "category": "constraints",
+      "phase": ["brainstorm"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "con-team",
+      "template": "What is the team composition and skill set available for {topic}?",
+      "category": "constraints",
+      "phase": ["brainstorm"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "con-regulatory",
+      "template": "Are there any regulatory, compliance, or legal constraints for {topic}? (e.g., GDPR, HIPAA, accessibility)",
+      "category": "constraints",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["con-data-privacy"]
+    },
+    {
+      "id": "con-data-privacy",
+      "template": "What data privacy and protection requirements apply to {topic}?",
+      "category": "constraints",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "arch-high-level",
+      "template": "What is the high-level architecture for {topic}? Can you describe the main components and their interactions?",
+      "category": "architecture",
+      "phase": ["brainstorm", "specify"],
+      "priority": "critical",
+      "followUps": ["arch-components", "arch-data-flow"]
+    },
+    {
+      "id": "arch-components",
+      "template": "What are the specific components/modules of {topic} and what is each responsible for?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": ["arch-interfaces"]
+    },
+    {
+      "id": "arch-interfaces",
+      "template": "How do the components of {topic} communicate? What are the interfaces between them?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "arch-data-flow",
+      "template": "How does data flow through {topic}? Can you trace a typical request/operation from start to finish?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": ["arch-data-storage"]
+    },
+    {
+      "id": "arch-data-storage",
+      "template": "What data needs to be persisted for {topic}? What is the data model and storage strategy?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": ["arch-data-schema"]
+    },
+    {
+      "id": "arch-data-schema",
+      "template": "What is the specific data schema for {topic}? Include field types, relationships, and constraints.",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "arch-patterns",
+      "template": "What design patterns are most appropriate for {topic}? (e.g., MVC, Repository, Factory, Observer)",
+      "category": "architecture",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": ["arch-pattern-rationale"]
+    },
+    {
+      "id": "arch-pattern-rationale",
+      "template": "Why are these specific patterns the best choice for {topic}? What alternatives did you consider?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "low",
+      "followUps": []
+    },
+    {
+      "id": "arch-technology",
+      "template": "What specific technologies, frameworks, and libraries will {topic} use and why?",
+      "category": "architecture",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["arch-tech-tradeoffs"]
+    },
+    {
+      "id": "arch-tech-tradeoffs",
+      "template": "What are the trade-offs of the chosen technology stack for {topic}?",
+      "category": "architecture",
+      "phase": ["specify"],
+      "priority": "low",
+      "followUps": []
+    },
+    {
+      "id": "edge-failure-modes",
+      "template": "What are all the ways {topic} could fail? List every failure scenario you can think of.",
+      "category": "edge-cases",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["edge-failure-recovery", "edge-failure-impact"]
+    },
+    {
+      "id": "edge-failure-recovery",
+      "template": "For each failure mode of {topic}, what is the recovery strategy?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "edge-failure-impact",
+      "template": "What is the impact of each failure mode on users and the system?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "edge-concurrent",
+      "template": "How does {topic} handle concurrent operations? What happens with race conditions or conflicts?",
+      "category": "edge-cases",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["edge-locking-strategy"]
+    },
+    {
+      "id": "edge-locking-strategy",
+      "template": "What locking or synchronization strategy will {topic} use to prevent conflicts?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "edge-boundary",
+      "template": "What are the boundary conditions for {topic}? (e.g., empty inputs, maximum values, null/undefined)",
+      "category": "edge-cases",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["edge-validation"]
+    },
+    {
+      "id": "edge-validation",
+      "template": "How will {topic} validate inputs to handle boundary conditions?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "edge-user-errors",
+      "template": "What user errors or misuse could occur with {topic}? How should the system respond?",
+      "category": "edge-cases",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": ["edge-error-messages"]
+    },
+    {
+      "id": "edge-error-messages",
+      "template": "What specific error messages and guidance will {topic} provide for each error scenario?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "low",
+      "followUps": []
+    },
+    {
+      "id": "edge-network",
+      "template": "How does {topic} handle network issues? (e.g., timeouts, disconnections, slow connections)",
+      "category": "edge-cases",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["edge-retry-logic"]
+    },
+    {
+      "id": "edge-retry-logic",
+      "template": "What retry logic and backoff strategy will {topic} implement for transient failures?",
+      "category": "edge-cases",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "perf-requirements",
+      "template": "What are the specific performance requirements for {topic}? (e.g., response time, throughput, resource usage)",
+      "category": "performance",
+      "phase": ["brainstorm"],
+      "priority": "high",
+      "followUps": ["perf-metrics", "perf-sla"]
+    },
+    {
+      "id": "perf-metrics",
+      "template": "How will performance of {topic} be measured? What specific metrics will you track?",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "perf-sla",
+      "template": "What are the Service Level Agreements (SLAs) for {topic}? (e.g., 99.9% uptime, <200ms response)",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "perf-scalability",
+      "template": "How will {topic} scale? What is the expected growth and how will the system handle it?",
+      "category": "performance",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["perf-bottlenecks", "perf-scaling-strategy"]
+    },
+    {
+      "id": "perf-bottlenecks",
+      "template": "What are the potential performance bottlenecks in {topic}?",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": ["perf-optimization"]
+    },
+    {
+      "id": "perf-optimization",
+      "template": "What optimization strategies will be employed for {topic}? (e.g., caching, indexing, lazy loading)",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "perf-scaling-strategy",
+      "template": "Will {topic} scale vertically or horizontally? What is the scaling strategy?",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "perf-load",
+      "template": "What is the expected load for {topic}? (e.g., users, requests/second, data volume)",
+      "category": "performance",
+      "phase": ["brainstorm"],
+      "priority": "high",
+      "followUps": ["perf-peak-load"]
+    },
+    {
+      "id": "perf-peak-load",
+      "template": "What is the peak load {topic} must handle? How does this differ from average load?",
+      "category": "performance",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "sec-threats",
+      "template": "What are the security threats and vulnerabilities for {topic}? Consider OWASP Top 10.",
+      "category": "security",
+      "phase": ["brainstorm"],
+      "priority": "critical",
+      "followUps": ["sec-mitigation", "sec-attack-surface"]
+    },
+    {
+      "id": "sec-mitigation",
+      "template": "How will each security threat to {topic} be mitigated?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "sec-attack-surface",
+      "template": "What is the attack surface of {topic}? What entry points exist for potential attackers?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "sec-authentication",
+      "template": "How will {topic} handle authentication? What mechanism will verify user identity?",
+      "category": "security",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["sec-authorization"]
+    },
+    {
+      "id": "sec-authorization",
+      "template": "How will {topic} handle authorization? What controls access to resources?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": ["sec-rbac"]
+    },
+    {
+      "id": "sec-rbac",
+      "template": "What roles and permissions are needed for {topic}? Define the access control matrix.",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "sec-data-protection",
+      "template": "How will {topic} protect sensitive data? Consider encryption at rest and in transit.",
+      "category": "security",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": ["sec-encryption", "sec-key-management"]
+    },
+    {
+      "id": "sec-encryption",
+      "template": "What encryption algorithms and protocols will {topic} use?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "sec-key-management",
+      "template": "How will {topic} manage encryption keys and secrets?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "sec-audit",
+      "template": "What security events will {topic} audit? How will logs be protected and retained?",
+      "category": "security",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "test-strategy",
+      "template": "What is the overall testing strategy for {topic}? What types of tests will be written?",
+      "category": "testing",
+      "phase": ["brainstorm", "specify"],
+      "priority": "critical",
+      "followUps": ["test-coverage", "test-automation"]
+    },
+    {
+      "id": "test-coverage",
+      "template": "What is the target test coverage for {topic}? Which parts require 100% coverage?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "test-automation",
+      "template": "How will testing for {topic} be automated? What tools and frameworks will be used?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "test-scenarios",
+      "template": "What are the critical test scenarios for {topic}? Provide specific test cases.",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": ["test-edge-cases"]
+    },
+    {
+      "id": "test-edge-cases",
+      "template": "What edge case tests are needed for {topic}?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "test-data",
+      "template": "What test data is needed for {topic}? How will it be generated or maintained?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "test-environments",
+      "template": "What test environments are needed for {topic}? How do they differ from production?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "low",
+      "followUps": []
+    },
+    {
+      "id": "test-performance",
+      "template": "How will performance testing be conducted for {topic}? What load patterns will be simulated?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "test-integration",
+      "template": "What integration tests are needed for {topic}? Which external systems must be tested?",
+      "category": "testing",
+      "phase": ["specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "clarify-ambiguous",
+      "template": "When you mentioned '{ambiguous_term}', could you be more specific? What exactly do you mean?",
+      "category": "clarification",
+      "phase": ["brainstorm", "specify", "decompose", "implement"],
+      "priority": "critical",
+      "followUps": []
+    },
+    {
+      "id": "clarify-example",
+      "template": "Could you provide a concrete example of {unclear_concept}? A specific scenario would help.",
+      "category": "clarification",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "clarify-priority",
+      "template": "You mentioned several features for {topic}. Which one is the highest priority and why?",
+      "category": "clarification",
+      "phase": ["brainstorm", "specify"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "clarify-scope",
+      "template": "Is {mentioned_feature} in scope for this implementation of {topic}, or is it for a future phase?",
+      "category": "clarification",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "clarify-assumption",
+      "template": "You seem to be assuming {assumption}. Is this correct, or should we consider alternatives?",
+      "category": "clarification",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "valid-understanding",
+      "template": "Let me validate my understanding: {topic} will {summary}. Is this accurate?",
+      "category": "validation",
+      "phase": ["specify", "decompose"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "valid-completeness",
+      "template": "Have we covered all aspects of {topic}? Is there anything important we haven't discussed?",
+      "category": "validation",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "valid-dependencies",
+      "template": "Are all dependencies for {topic} identified? Do we need anything else to proceed?",
+      "category": "validation",
+      "phase": ["specify", "decompose"],
+      "priority": "high",
+      "followUps": []
+    },
+    {
+      "id": "valid-risks",
+      "template": "What risks have we not addressed for {topic}? Are there any concerns we should discuss?",
+      "category": "validation",
+      "phase": ["brainstorm", "specify"],
+      "priority": "medium",
+      "followUps": []
+    },
+    {
+      "id": "valid-alternatives",
+      "template": "What alternative approaches for {topic} did you consider? Why was this approach chosen?",
+      "category": "validation",
+      "phase": ["brainstorm"],
+      "priority": "low",
+      "followUps": []
+    }
+  ],
+  "followUpRules": {
+    "maxDepth": 3,
+    "conditions": {
+      "vague_answer": {
+        "triggers": ["maybe", "possibly", "might", "could be", "depends", "sometimes"],
+        "action": "ask_clarification"
+      },
+      "incomplete_answer": {
+        "triggers": ["word_count < 20", "missing_details"],
+        "action": "ask_for_details"
+      },
+      "contradictory_answer": {
+        "triggers": ["conflicts_with_previous"],
+        "action": "ask_validation"
+      },
+      "high_risk_identified": {
+        "triggers": ["critical_issue", "security_concern", "data_loss_risk"],
+        "action": "deep_dive"
+      }
+    }
+  },
+  "phaseTransitions": {
+    "brainstorm": {
+      "minQuestions": 10,
+      "minCoverage": {
+        "requirements": 2,
+        "constraints": 2,
+        "architecture": 1,
+        "edge-cases": 2
+      },
+      "targetConfidence": 0.85
+    },
+    "specify": {
+      "minQuestions": 8,
+      "minCoverage": {
+        "architecture": 3,
+        "testing": 2,
+        "validation": 1
+      },
+      "targetConfidence": 0.90
+    },
+    "decompose": {
+      "minQuestions": 5,
+      "minCoverage": {
+        "validation": 2,
+        "clarification": 1
+      },
+      "targetConfidence": 0.90
+    },
+    "implement": {
+      "minQuestions": 3,
+      "minCoverage": {
+        "testing": 2,
+        "validation": 1
+      },
+      "targetConfidence": 0.95
+    }
+  },
+  "adaptiveRules": {
+    "increasePriorityOn": {
+      "lowConfidence": ["requirements", "constraints", "edge-cases"],
+      "highComplexity": ["architecture", "testing", "performance"],
+      "securityConcerns": ["security", "edge-cases", "validation"]
+    },
+    "skipIfAnswered": {
+      "similarQuestions": true,
+      "coveredInFollowUp": true
+    },
+    "repeatIfAmbiguous": {
+      "maxAttempts": 2,
+      "escalateTo": "clarification"
+    }
+  }
+}
