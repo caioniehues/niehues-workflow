@@ -1,149 +1,143 @@
 ---
-command: nexus-brainstorm
-description: Generate 20+ creative approaches for any problem or feature
-tools:
-  - Read
-  - Write
-  - TodoWrite
-arguments:
-  - name: topic
-    description: The topic or feature to brainstorm
-    required: true
-  - name: --problem
-    description: Detailed problem statement
-    required: false
-  - name: --min-approaches
-    description: Minimum number of approaches to generate (default 20)
-    required: false
-  - name: --output
-    description: Output file path (default .nexus/brainstorms/)
-    required: false
+name: nexus-brainstorm
+description: Generate multiple solution approaches through unlimited questioning
+tools: Read, Write, Task, TodoWrite
+implementation: .claude/commands/nexus-brainstorm.md
 ---
 
-# Nexus Brainstorm Command
+# /nexus-brainstorm [topic]
 
-Generate diverse creative approaches for any problem or feature using structured ideation.
+Explore solution approaches through comprehensive questioning and pattern analysis.
 
-## Usage
-```
-/nexus-brainstorm <topic> [--problem="<statement>"] [--min-approaches=20] [--output=<path>]
-```
+<pre_flight>
+  <check id="nexus_initialized">
+    Verify .nexus directory exists
+    If not: Suggest running /nexus-init first
+  </check>
 
-## What It Does
+  <check id="topic_provided">
+    Ensure topic/feature description provided
+    If vague: Begin clarification questions
+  </check>
 
-The brainstorm command generates a minimum of 20 diverse approaches categorized as:
-- **Conventional**: Proven, low-risk solutions using established patterns
-- **Innovative**: Modern, cutting-edge approaches with higher rewards
-- **Experimental**: Unproven but potentially breakthrough solutions
-- **Hybrid**: Combinations of multiple approaches
+  <check id="pattern_library">
+    Check .nexus/patterns/ for existing patterns
+    Load relevant patterns for context
+  </check>
+</pre_flight>
 
-Each approach is evaluated on:
-- Feasibility (0-10): How achievable with current resources
-- Complexity (0-10): Implementation difficulty
-- Risk (0-10): Potential for failure or issues
-- Innovation (0-10): Novelty and competitive advantage
+<process_flow>
+  <step number="1" subagent="questioning-agent">
+    **Unlimited Questioning Phase**
 
-## Process
+    Continue asking until complete understanding:
+    - What problem are we solving?
+    - Who are the users/stakeholders?
+    - What are the success criteria?
+    - What constraints exist?
+    - What are the edge cases?
+    - What security concerns exist?
+    - What performance requirements?
+    - What integration points?
 
-### 1. Problem Analysis
-- Captures problem statement
-- Identifies constraints
-- Defines success criteria
+    NO LIMIT on questions - continue until clarity
+  </step>
 
-### 2. Approach Generation
-- Generates 5-7 conventional approaches
-- Generates 5-7 innovative approaches
-- Generates 5-7 experimental approaches
-- Creates 3-5 hybrid combinations
-- Explores "what if" questions:
-  - What if we had unlimited resources?
-  - How would a different industry solve this?
-  - What assumptions can we challenge?
-  - What would make this remarkable?
-  - How would we solve this in 10% of the time?
-  - What if we inverted the problem?
-  - How would AI solve this differently?
-  - What patterns from nature could apply?
+  <step number="2" subagent="pattern-detector">
+    **Pattern Search**
 
-### 3. Evaluation
-- Scores each approach using weighted criteria
-- Generates rationale for scores
-- Ranks by overall score
+    Search .nexus/patterns/ for:
+    - Similar problems solved before
+    - Reusable architectural patterns
+    - Common implementation patterns
+    - Security patterns
+    - Testing patterns
+  </step>
 
-### 4. Selection
-- Selects top 3-5 approaches
-- Ensures category diversity
-- Provides selection rationale
+  <step number="3" subagent="code-archaeologist">
+    **Existing Code Analysis**
 
-### 5. Documentation
-- Saves session to `.nexus/brainstorms/`
-- Creates markdown report
-- Tracks metrics
+    Analyze current codebase for:
+    - Related functionality
+    - Similar patterns
+    - Potential conflicts
+    - Integration points
+    - Reusable components
+  </step>
 
-## Examples
+  <step number="4">
+    **Generate Approaches (minimum 3)**
 
-### Basic Brainstorm
-```
-/nexus-brainstorm "user authentication system"
-```
-Generates 20+ approaches for implementing user authentication.
+    Approach A: Conventional
+    - Standard solution
+    - Well-tested patterns
+    - Lower risk
 
-### With Problem Statement
-```
-/nexus-brainstorm "payment processing" --problem="Need to handle multiple currencies with real-time conversion"
-```
-Generates approaches specifically for the stated problem.
+    Approach B: Optimal
+    - Best technical solution
+    - May require more effort
+    - Higher quality
 
-### Custom Minimum Approaches
-```
-/nexus-brainstorm "data migration" --min-approaches=30
-```
-Generates at least 30 different approaches.
+    Approach C: Pragmatic
+    - Balance of speed and quality
+    - Practical constraints considered
+    - Reasonable compromises
 
-### Custom Output Location
-```
-/nexus-brainstorm "API design" --output="./docs/brainstorms/"
-```
-Saves the brainstorm session to a custom location.
+    [Optional] Approach D: Innovative
+    - Creative solution
+    - Potential for pattern extraction
+    - Higher risk/reward
+  </step>
 
-## Output Format
+  <step number="5">
+    **Trade-off Analysis**
 
-The command generates a markdown file with:
-- Problem statement and context
-- All constraints identified
-- Success criteria defined
-- Complete list of approaches with:
-  - Description
-  - Pros and cons
-  - Metrics (feasibility, complexity, risk, innovation)
-  - Score and rationale
-- Top 3-5 selected approaches with justification
+    For each approach:
+    - Implementation effort
+    - Maintenance burden
+    - Performance impact
+    - Security implications
+    - Testing complexity
+    - Learning curve
+  </step>
 
-## Best Practices
+  <step number="6">
+    **Document Brainstorm**
 
-1. **Be Specific**: Provide detailed problem statements for better approaches
-2. **Review All Approaches**: Don't just focus on selected ones
-3. **Consider Combinations**: Hybrid approaches often provide best results
-4. **Update Constraints**: Add project-specific constraints for relevance
-5. **Iterate**: Run multiple brainstorms from different angles
+    Save to: .nexus/brainstorms/[timestamp]-[topic].md
 
-## Integration
+    Include:
+    - Questions asked and answers
+    - Patterns identified
+    - All approaches generated
+    - Trade-off analysis
+    - Recommendation with rationale
+    - Risk assessment
+  </step>
 
-After brainstorming:
-1. Use `/nexus-specify` to create detailed specifications for selected approaches
-2. Use `/nexus-shard` to break down large specifications
-3. Use `/nexus-decompose` to create implementation tasks
-4. Use `/nexus-implement` to begin TDD development
+  <step number="7">
+    **Micro-Evolution**
 
-## Metrics Tracked
+    Track:
+    - New question patterns
+    - Constraint patterns
+    - Decision patterns
 
-- Total approaches generated
-- Category distribution
-- Average scores by category
-- Selection rate
-- Time to generate
+    Update if threshold met:
+    - Questions asked 5+ times
+    - Patterns seen 3+ times
+  </step>
+</process_flow>
 
-## Related Commands
-- `/nexus-specify`: Create specifications from brainstorm results
-- `/nexus-evaluate`: Compare approaches in detail
-- `/nexus-metrics`: View brainstorming effectiveness metrics
+<outputs>
+  <output type="file">
+    Path: .nexus/brainstorms/[timestamp]-[topic].md
+    Content: Complete brainstorm documentation
+  </output>
+  <output type="decision">
+    Selected approach with justification
+  </output>
+  <output type="next_step">
+    Suggestion: /nexus-specify [selected-approach]
+  </output>
+</outputs>

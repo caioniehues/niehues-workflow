@@ -1,0 +1,100 @@
+# Test Pattern: {{pattern_name}}
+
+## Pattern Overview
+**Category**: {{test_category}}
+**Test Level**: {{test_level}}
+**Framework**: {{testing_framework}}
+**Created**: {{creation_date}}
+
+## Testing Problem
+{{testing_problem_description}}
+
+## Context
+{{context_description}}
+
+## Solution
+{{solution_description}}
+
+## Test Structure
+```{{language}}
+{{test_structure}}
+```
+
+## Implementation
+```{{language}}
+{{test_implementation}}
+```
+
+## Test Data Management
+```{{language}}
+{{test_data_setup}}
+```
+
+## Assertion Patterns
+```{{language}}
+{{assertion_examples}}
+```
+
+## Mock/Stub Strategy
+```{{language}}
+{{mocking_examples}}
+```
+
+## Test Scenarios
+{{#test_scenarios}}
+### {{scenario_name}}
+- **Given**: {{given_condition}}
+- **When**: {{when_action}}
+- **Then**: {{then_expectation}}
+{{/test_scenarios}}
+
+## Edge Cases
+{{#edge_cases}}
+- **Case**: {{edge_case_description}}
+- **Test**: {{edge_case_test}}
+{{/edge_cases}}
+
+## Performance Characteristics
+- **Execution Time**: {{execution_time}}
+- **Resource Usage**: {{resource_usage}}
+- **Flakiness Risk**: {{flakiness_risk}}
+
+## Maintenance Guidelines
+{{#maintenance_guidelines}}
+- {{guideline}}
+{{/maintenance_guidelines}}
+
+## Related Test Patterns
+{{#related_patterns}}
+- **{{pattern_name}}**: {{relationship_description}}
+{{/related_patterns}}
+
+## CI/CD Integration
+```{{ci_config_format}}
+{{ci_integration_config}}
+```
+
+## Debugging Support
+```{{language}}
+{{debugging_helpers}}
+```
+
+## Common Anti-patterns
+{{#anti_patterns}}
+- **Anti-pattern**: {{anti_pattern_description}}
+- **Problem**: {{problem_description}}
+- **Solution**: {{solution_description}}
+{{/anti_patterns}}
+
+## Evolution History
+- **Version**: {{version}}
+- **Usage Count**: {{usage_count}}
+- **Last Updated**: {{last_updated}}
+
+## Extraction Metadata
+- **Source Project**: {{source_project}}
+- **Detection Threshold**: {{detection_threshold}}
+- **Confidence Score**: {{confidence_score}}
+
+---
+*Generated from Nexus v5 Test Pattern Template*

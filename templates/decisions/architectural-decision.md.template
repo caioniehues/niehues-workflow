@@ -1,0 +1,246 @@
+# Architectural Decision Record: {{decision_title}}
+
+## ADR Metadata
+**ADR Number**: {{adr_number}}
+**Date**: {{decision_date}}
+**Status**: {{status}}
+**Architecture Decision**: {{architecture_scope}}
+**Stakeholders**: {{stakeholders}}
+
+## Title
+{{decision_title}}
+
+## Context
+{{architectural_context}}
+
+### System Overview
+{{system_overview}}
+
+### Current Architecture
+{{current_architecture_description}}
+
+### Problem Statement
+{{problem_statement}}
+
+### Quality Attributes Affected
+{{#quality_attributes}}
+- **{{attribute_name}}**: {{current_state}} → {{desired_state}}
+{{/quality_attributes}}
+
+### Architectural Drivers
+{{#drivers}}
+#### {{driver_category}}: {{driver_name}}
+- **Description**: {{driver_description}}
+- **Priority**: {{driver_priority}}
+- **Source**: {{driver_source}}
+- **Rationale**: {{driver_rationale}}
+{{/drivers}}
+
+## Decision
+{{decision_statement}}
+
+### Architectural Pattern
+**Pattern**: {{architectural_pattern}}
+**Rationale**: {{pattern_rationale}}
+
+### Key Design Decisions
+{{#design_decisions}}
+#### {{decision_area}}
+- **Decision**: {{design_decision}}
+- **Alternatives Considered**: {{alternatives}}
+- **Rationale**: {{decision_rationale}}
+{{/design_decisions}}
+
+## Rationale
+{{overall_rationale}}
+
+### Option Analysis
+{{#options}}
+### Option {{option_number}}: {{option_name}}
+
+**Architecture Description**: {{architecture_description}}
+
+**Quality Attribute Analysis**:
+{{#quality_analysis}}
+- **{{quality_attribute}}**: {{analysis}} (Score: {{score}}/10)
+{{/quality_analysis}}
+
+**Pros**:
+{{#pros}}
+- {{pro}}
+{{/pros}}
+
+**Cons**:
+{{#cons}}
+- {{con}}
+{{/cons}}
+
+**Technical Risk**: {{technical_risk}}
+**Implementation Complexity**: {{implementation_complexity}}
+**Maintenance Overhead**: {{maintenance_overhead}}
+{{/options}}
+
+### Selection Criteria
+{{#selection_criteria}}
+- **{{criterion_name}}**: {{criterion_weight}}% (Rationale: {{criterion_rationale}})
+{{/selection_criteria}}
+
+### Scoring Matrix
+| Option | {{#criteria_headers}}{{criterion}} | {{/criteria_headers}}Total |
+|--------|{{#criteria_headers}}-----------| {{/criteria_headers}}------|
+{{#option_scores}}
+| {{option_name}} | {{#scores}}{{score}} | {{/scores}}{{total_score}} |
+{{/option_scores}}
+
+## Consequences
+{{consequences_overview}}
+
+### Positive Consequences
+{{#positive_consequences}}
+- {{consequence}}
+{{/positive_consequences}}
+
+### Negative Consequences
+{{#negative_consequences}}
+- {{consequence}}
+{{/negative_consequences}}
+
+### Quality Attribute Impact
+{{#quality_impacts}}
+#### {{quality_attribute}}
+- **Impact**: {{impact_description}}
+- **Measurement**: {{measurement_approach}}
+- **Target**: {{target_value}}
+{{/quality_impacts}}
+
+### Technical Debt
+{{technical_debt_analysis}}
+
+## Implementation
+
+### Architecture Components
+{{#components}}
+#### {{component_name}}
+- **Responsibility**: {{component_responsibility}}
+- **Technology**: {{component_technology}}
+- **Interfaces**: {{component_interfaces}}
+- **Dependencies**: {{component_dependencies}}
+{{/components}}
+
+### Implementation Strategy
+{{#implementation_phases}}
+#### Phase {{phase_number}}: {{phase_name}}
+- **Scope**: {{phase_scope}}
+- **Duration**: {{phase_duration}}
+- **Deliverables**: {{phase_deliverables}}
+- **Dependencies**: {{phase_dependencies}}
+- **Risks**: {{phase_risks}}
+{{/implementation_phases}}
+
+### Migration Strategy
+{{migration_strategy}}
+
+### Deployment Approach
+{{deployment_approach}}
+
+## Governance and Compliance
+
+### Architectural Governance
+{{architectural_governance}}
+
+### Compliance Requirements
+{{#compliance_requirements}}
+- **{{requirement_name}}**: {{requirement_description}} (Status: {{compliance_status}})
+{{/compliance_requirements}}
+
+### Review and Approval Process
+{{#approval_steps}}
+- **{{approver_role}}**: {{approver_name}} (Status: {{approval_status}}, Date: {{approval_date}})
+{{/approval_steps}}
+
+## Risks and Mitigation
+
+### Architectural Risks
+{{#risks}}
+#### {{risk_category}}: {{risk_title}}
+- **Description**: {{risk_description}}
+- **Probability**: {{risk_probability}}
+- **Impact**: {{risk_impact}}
+- **Mitigation**: {{risk_mitigation}}
+- **Contingency**: {{risk_contingency}}
+{{/risks}}
+
+### Technical Risks
+{{#technical_risks}}
+- **Risk**: {{risk_description}}
+- **Mitigation**: {{mitigation_strategy}}
+{{/technical_risks}}
+
+## Monitoring and Evolution
+
+### Architecture Health Metrics
+{{#health_metrics}}
+- **{{metric_name}}**: {{metric_description}} (Threshold: {{metric_threshold}})
+{{/health_metrics}}
+
+### Evolution Triggers
+{{#evolution_triggers}}
+- **{{trigger_name}}**: {{trigger_condition}} → {{trigger_action}}
+{{/evolution_triggers}}
+
+### Review Schedule
+- **Architecture Review**: {{architecture_review_frequency}}
+- **Fitness Function Review**: {{fitness_function_review_frequency}}
+- **Technology Evolution Review**: {{technology_review_frequency}}
+
+## Documentation and Communication
+
+### Architecture Documentation
+{{#documentation_requirements}}
+- **{{document_type}}**: {{document_description}} (Owner: {{document_owner}})
+{{/documentation_requirements}}
+
+### Communication Strategy
+{{#communication_plan}}
+- **{{stakeholder_group}}**: {{communication_message}} (Channel: {{communication_channel}})
+{{/communication_plan}}
+
+### Training Requirements
+{{#training_needs}}
+- **{{training_topic}}**: {{training_description}} (Audience: {{training_audience}})
+{{/training_needs}}
+
+## Related Architecture
+
+### Upstream Dependencies
+{{#upstream_dependencies}}
+- **{{dependency_name}}**: {{dependency_description}} (Impact: {{dependency_impact}})
+{{/upstream_dependencies}}
+
+### Downstream Impacts
+{{#downstream_impacts}}
+- **{{impacted_system}}**: {{impact_description}} (Timeline: {{impact_timeline}})
+{{/downstream_impacts}}
+
+### Related ADRs
+{{#related_adrs}}
+- **ADR-{{adr_number}}**: {{adr_title}} (Relationship: {{relationship_type}})
+{{/related_adrs}}
+
+## Validation and Testing
+
+### Architecture Validation
+{{architecture_validation_approach}}
+
+### Proof of Concept Results
+{{poc_results}}
+
+### Testing Strategy
+{{#testing_strategies}}
+- **{{test_type}}**: {{test_description}} (Success Criteria: {{test_criteria}})
+{{/testing_strategies}}
+
+---
+*Generated from Nexus v5 Architectural Decision Template*
+*ADR Status: {{adr_status}}*
+*Next Review: {{next_review_date}}*

@@ -1,0 +1,75 @@
+# {{project_name}} Directory Structure
+
+## Project Root
+```
+{{project_name}}/
+├── .nexus/                 # Nexus workflow tracking
+│   ├── guidelines.md       # Project guidelines
+│   ├── brainstorms/        # Brainstorming outputs
+│   ├── specs/              # Specifications
+│   ├── design/             # Architecture designs
+│   ├── tasks/              # Task breakdowns
+│   ├── patterns/           # Extracted patterns
+│   └── evolution/          # Learning reports
+│
+├── {{source_directory}}/   # Main source code
+│   ├── {{core_modules}}/   # Core business logic
+│   ├── {{api_layer}}/      # API/Interface layer
+│   ├── {{data_layer}}/     # Data access layer
+│   └── {{utils}}/          # Utilities and helpers
+│
+├── {{test_directory}}/     # Test suites
+│   ├── unit/               # Unit tests
+│   ├── integration/        # Integration tests
+│   └── e2e/                # End-to-end tests
+│
+├── {{config_directory}}/   # Configuration files
+│   ├── {{environment_configs}}/  # Environment-specific configs
+│   └── {{deployment_configs}}/   # Deployment configurations
+│
+├── docs/                   # Documentation
+│   ├── api/                # API documentation
+│   ├── architecture/       # Architecture docs
+│   └── user/               # User guides
+│
+└── scripts/                # Build and deployment scripts
+    ├── build/              # Build scripts
+    ├── deploy/             # Deployment scripts
+    └── maintenance/        # Maintenance scripts
+```
+
+## Directory Guidelines
+
+### {{source_directory}}/
+{{source_description}}
+
+### {{test_directory}}/
+{{test_description}}
+
+### {{config_directory}}/
+{{config_description}}
+
+### docs/
+{{documentation_description}}
+
+### scripts/
+{{scripts_description}}
+
+## Naming Conventions
+- **Files**: {{file_naming_convention}}
+- **Directories**: {{directory_naming_convention}}
+- **Constants**: {{constant_naming_convention}}
+- **Variables**: {{variable_naming_convention}}
+
+## Organization Principles
+{{#organization_principles}}
+- {{principle}}
+{{/organization_principles}}
+
+## Evolution Notes
+- **Created**: {{creation_date}}
+- **Last Updated**: {{last_updated}}
+- **Structure Version**: {{structure_version}}
+
+---
+*Generated from Nexus v5 Foundation Template*

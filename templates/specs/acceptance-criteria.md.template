@@ -1,0 +1,261 @@
+# Acceptance Criteria: {{feature_name}}
+
+## Overview
+**Feature ID**: {{feature_id}}
+**Created**: {{creation_date}}
+**Owner**: {{criteria_owner}}
+**Status**: {{criteria_status}}
+
+## User Story Context
+**As a** {{user_role}}
+**I want** {{user_goal}}
+**So that** {{user_benefit}}
+
+## Functional Acceptance Criteria
+
+{{#functional_criteria}}
+### Scenario {{scenario_number}}: {{scenario_name}}
+
+**Given** {{given_condition}}
+**When** {{when_action}}
+**Then** {{then_outcome}}
+
+#### Additional Context
+{{#additional_context}}
+- {{context_item}}
+{{/additional_context}}
+
+#### Edge Cases
+{{#edge_cases}}
+- **Case**: {{edge_case_description}}
+- **Expected**: {{edge_case_expectation}}
+{{/edge_cases}}
+
+#### Test Data Requirements
+{{#test_data}}
+- {{data_requirement}}
+{{/test_data}}
+
+{{/functional_criteria}}
+
+## Non-Functional Acceptance Criteria
+
+### Performance Criteria
+{{#performance_criteria}}
+- **Metric**: {{performance_metric}}
+- **Target**: {{performance_target}}
+- **Measurement**: {{measurement_method}}
+- **Conditions**: {{test_conditions}}
+{{/performance_criteria}}
+
+### Security Criteria
+{{#security_criteria}}
+- **Requirement**: {{security_requirement}}
+- **Validation**: {{security_validation}}
+- **Compliance**: {{compliance_standard}}
+{{/security_criteria}}
+
+### Usability Criteria
+{{#usability_criteria}}
+- **Aspect**: {{usability_aspect}}
+- **Standard**: {{usability_standard}}
+- **Validation**: {{usability_validation}}
+{{/usability_criteria}}
+
+### Accessibility Criteria
+{{#accessibility_criteria}}
+- **Standard**: {{accessibility_standard}}
+- **Level**: {{compliance_level}}
+- **Validation**: {{accessibility_validation}}
+{{/accessibility_criteria}}
+
+## Integration Criteria
+
+### API Integration
+{{#api_criteria}}
+- **Endpoint**: {{api_endpoint}}
+- **Expected Response**: {{expected_response}}
+- **Error Handling**: {{error_handling}}
+- **Rate Limits**: {{rate_limits}}
+{{/api_criteria}}
+
+### Data Integration
+{{#data_criteria}}
+- **Data Source**: {{data_source}}
+- **Format**: {{data_format}}
+- **Validation**: {{data_validation}}
+- **Sync Requirements**: {{sync_requirements}}
+{{/data_criteria}}
+
+### Third-Party Integration
+{{#third_party_criteria}}
+- **Service**: {{third_party_service}}
+- **Integration Type**: {{integration_type}}
+- **Success Criteria**: {{success_criteria}}
+- **Fallback Behavior**: {{fallback_behavior}}
+{{/third_party_criteria}}
+
+## Browser & Device Compatibility
+
+### Supported Browsers
+{{#browser_support}}
+- {{browser_name}} {{version_requirement}}
+{{/browser_support}}
+
+### Device Requirements
+{{#device_support}}
+- **Device Type**: {{device_type}}
+- **Screen Sizes**: {{screen_sizes}}
+- **Special Considerations**: {{device_considerations}}
+{{/device_support}}
+
+## Error Handling Criteria
+
+{{#error_scenarios}}
+### Error Scenario: {{error_name}}
+- **Trigger**: {{error_trigger}}
+- **Expected Behavior**: {{error_behavior}}
+- **User Message**: {{error_message}}
+- **Recovery Path**: {{recovery_path}}
+- **Logging Requirements**: {{logging_requirements}}
+{{/error_scenarios}}
+
+## Data Validation Criteria
+
+{{#validation_rules}}
+### {{field_name}} Validation
+- **Format**: {{validation_format}}
+- **Range**: {{validation_range}}
+- **Required**: {{required_status}}
+- **Error Message**: {{validation_error_message}}
+{{/validation_rules}}
+
+## Workflow Criteria
+
+{{#workflow_steps}}
+### Step {{step_number}}: {{step_name}}
+- **Input**: {{step_input}}
+- **Process**: {{step_process}}
+- **Output**: {{step_output}}
+- **Validation**: {{step_validation}}
+- **Rollback**: {{rollback_procedure}}
+{{/workflow_steps}}
+
+## Testing Requirements
+
+### Test Environment Setup
+{{#test_environment}}
+- **Environment**: {{environment_name}}
+- **Configuration**: {{environment_config}}
+- **Dependencies**: {{environment_dependencies}}
+{{/test_environment}}
+
+### Test Execution
+{{#test_execution}}
+- **Test Type**: {{test_type}}
+- **Frequency**: {{test_frequency}}
+- **Automation Level**: {{automation_level}}
+- **Pass Criteria**: {{pass_criteria}}
+{{/test_execution}}
+
+### Test Data Management
+{{#test_data_management}}
+- **Data Type**: {{data_type}}
+- **Source**: {{data_source}}
+- **Refresh Strategy**: {{refresh_strategy}}
+- **Cleanup**: {{cleanup_strategy}}
+{{/test_data_management}}
+
+## Monitoring & Observability
+
+### Success Metrics
+{{#success_metrics}}
+- **Metric**: {{metric_name}}
+- **Target**: {{metric_target}}
+- **Measurement**: {{measurement_method}}
+- **Frequency**: {{measurement_frequency}}
+{{/success_metrics}}
+
+### Alerting Requirements
+{{#alerting_requirements}}
+- **Condition**: {{alert_condition}}
+- **Threshold**: {{alert_threshold}}
+- **Recipients**: {{alert_recipients}}
+- **Escalation**: {{escalation_procedure}}
+{{/alerting_requirements}}
+
+## Deployment Criteria
+
+### Release Requirements
+{{#release_requirements}}
+- **Environment**: {{release_environment}}
+- **Prerequisites**: {{release_prerequisites}}
+- **Rollback Plan**: {{rollback_plan}}
+- **Verification Steps**: {{verification_steps}}
+{{/release_requirements}}
+
+### Configuration Management
+{{#config_management}}
+- **Configuration**: {{config_item}}
+- **Environment Specific**: {{env_specific}}
+- **Validation**: {{config_validation}}
+{{/config_management}}
+
+## Documentation Requirements
+
+### User Documentation
+{{#user_documentation}}
+- **Document Type**: {{doc_type}}
+- **Content**: {{doc_content}}
+- **Format**: {{doc_format}}
+- **Delivery**: {{doc_delivery}}
+{{/user_documentation}}
+
+### Technical Documentation
+{{#technical_documentation}}
+- **Document Type**: {{tech_doc_type}}
+- **Audience**: {{tech_doc_audience}}
+- **Content**: {{tech_doc_content}}
+- **Maintenance**: {{tech_doc_maintenance}}
+{{/technical_documentation}}
+
+## Definition of Done
+
+### Code Quality
+{{#code_quality}}
+- [ ] {{quality_requirement}}
+{{/code_quality}}
+
+### Testing Completion
+{{#testing_completion}}
+- [ ] {{testing_requirement}}
+{{/testing_completion}}
+
+### Documentation
+{{#documentation_completion}}
+- [ ] {{documentation_requirement}}
+{{/documentation_completion}}
+
+### Review & Approval
+{{#review_approval}}
+- [ ] {{review_requirement}}
+{{/review_approval}}
+
+## Approval Sign-off
+
+| Role | Name | Date | Signature |
+|------|------|------|-----------|
+| {{#approvers}}
+| {{approver_role}} | {{approver_name}} | {{approval_date}} | {{approval_signature}} |
+{{/approvers}}
+
+---
+
+## Evolution Tracking
+- **Version**: {{criteria_version}}
+- **Last Updated**: {{last_updated}}
+- **Review Cycle**: {{review_frequency}}
+- **Next Review**: {{next_review_date}}
+
+---
+*Generated from Nexus v5 Acceptance Criteria Template*

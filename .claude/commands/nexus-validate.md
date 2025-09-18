@@ -1,93 +1,150 @@
 ---
-command: nexus-validate
-description: Quality assurance and compliance validation for tasks, epics, or projects
-tools:
-  - Read
-  - Bash
-  - TodoWrite
-arguments:
-  - name: --scope
-    description: Validation scope (task, epic, project)
-    required: true
-  - name: --task
-    description: Specific task ID to validate
-    required: false
-  - name: --fix
-    description: Attempt to fix issues automatically
-    required: false
+name: nexus-validate
+description: Comprehensive validation with quality gates and metrics
+tools: Bash, Read, Write, Glob, Task
+implementation: .claude/commands/nexus-validate.md
 ---
 
-# Nexus Validate Command
+# /nexus-validate [feature]
 
-Run quality checks and constitutional compliance validation.
+Validate implementation against quality standards and requirements.
 
-## Usage
-```
-/nexus-validate --scope=[task|epic|project] [--task=<task-id>] [--fix]
-```
+<pre_flight>
+  <check id="implementation_complete">
+    Verify all tasks in DONE state
+    Check no BLOCKED tasks
+    Review any FAILED tasks
+  </check>
 
-## What It Does
+  <check id="test_environment">
+    Detect test framework
+    Verify test commands
+    Check coverage tools
+  </check>
+</pre_flight>
 
-Basic validation checks:
-- **Constitutional Compliance**: TDD requirements met
-- **Test Coverage**: Minimum 80% coverage where applicable
-- **Implementation Status**: Tasks marked complete have working code
-- **Documentation**: Required files exist and are current
+<validation_phases>
+  <phase name="test_validation">
+    **Test Execution**
 
-## Validation Scopes
+    Run all test suites:
+    - Unit tests
+    - Integration tests
+    - E2E tests (if applicable)
 
-### Task Validation
-```
-/nexus-validate --scope=task --task=AUTH-001
-```
-Checks:
-- Task file exists and has embedded context
-- Acceptance criteria are defined
-- If marked complete: tests exist and pass
-- Implementation matches acceptance criteria
+    Success criteria:
+    - 100% tests passing
+    - No flaky tests
+    - Reasonable execution time
+  </phase>
 
-### Epic Validation
-```
-/nexus-validate --scope=epic
-```
-Checks:
-- All tasks in epic have proper context
-- Dependencies are satisfied
-- No circular dependencies
-- Progress tracking is current
+  <phase name="coverage_validation">
+    **Coverage Analysis**
 
-### Project Validation
-```
-/nexus-validate --scope=project
-```
-Checks:
-- Constitutional framework in place
-- All phases have proper artifacts
-- No TDD violations in codebase
-- Documentation is complete
+    Measure test coverage:
+    - Line coverage ≥ 80%
+    - Branch coverage ≥ 70%
+    - Critical paths 100%
 
-## Auto-Fix Mode
-```
-/nexus-validate --scope=task --task=AUTH-001 --fix
-```
-Attempts to automatically fix common issues:
-- Generate missing test files
-- Update task status
-- Fix formatting issues
-- Create missing documentation
+    Identify gaps:
+    - Uncovered lines
+    - Untested branches
+    - Missing edge cases
+  </phase>
 
-## Output
+  <phase name="guideline_validation">
+    **Guideline Compliance**
 
-Generates a validation report showing:
-- ✅ Passed checks
-- ❌ Failed checks
-- ⚠️ Warnings
-- 🔧 Auto-fixable issues
+    Check against .nexus/guidelines.md:
+    - TDD compliance
+    - Code style
+    - Documentation
+    - Security practices
 
-## Integration
+    Generate compliance report
+  </phase>
 
-Use validation:
-- Before marking tasks complete
-- At end of each phase
-- Before project deployment
-- During code reviews
+  <phase name="security_validation" subagent="security-guardian">
+    **Security Scan**
+
+    Perform security checks:
+    - Dependency vulnerabilities
+    - Code security patterns
+    - Sensitive data exposure
+    - Authentication/authorization
+
+    Must pass all critical checks
+  </phase>
+
+  <phase name="documentation_validation">
+    **Documentation Check**
+
+    Verify documentation:
+    - API documentation complete
+    - README updated
+    - Inline comments appropriate
+    - Examples provided
+  </phase>
+
+  <phase name="performance_validation">
+    **Performance Benchmarks**
+
+    Run performance tests:
+    - Response time requirements
+    - Resource usage limits
+    - Scalability tests
+    - Load testing
+  </phase>
+
+  <phase name="pattern_validation" subagent="pattern-detector">
+    **Pattern Compliance**
+
+    Verify pattern usage:
+    - Patterns correctly applied
+    - No anti-patterns detected
+    - Consistency maintained
+  </phase>
+</validation_phases>
+
+<quality_gates>
+  <gate name="tests" required="true">
+    All tests must pass
+  </gate>
+
+  <gate name="coverage" required="true">
+    Coverage ≥ 80%
+  </gate>
+
+  <gate name="security" required="true">
+    No critical vulnerabilities
+  </gate>
+
+  <gate name="guidelines" required="true">
+    95% guideline compliance
+  </gate>
+
+  <gate name="documentation" required="false">
+    Documentation complete
+  </gate>
+</quality_gates>
+
+<report_generation>
+  Generate validation report:
+  .nexus/validation/[timestamp]-report.md
+
+  Include:
+  - Test results
+  - Coverage metrics
+  - Security findings
+  - Guideline compliance
+  - Performance results
+  - Recommendations
+</report_generation>
+
+<micro_evolution>
+  Track validation patterns:
+  - Common failures
+  - Recurring issues
+  - Improvement opportunities
+  - Success patterns
+</micro_evolution>

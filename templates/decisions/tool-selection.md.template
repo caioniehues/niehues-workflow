@@ -1,0 +1,284 @@
+# Tool Selection Decision: {{tool_category}}
+
+## Selection Metadata
+**Decision ID**: {{decision_id}}
+**Tool Category**: {{tool_category}}
+**Selection Date**: {{selection_date}}
+**Decision Makers**: {{decision_makers}}
+**Review Date**: {{review_date}}
+
+## Selection Context
+
+### Business Need
+{{business_need_description}}
+
+### Current State
+{{current_state_description}}
+
+### Problem to Solve
+{{problem_statement}}
+
+### Success Criteria
+{{#success_criteria}}
+- {{criterion}}
+{{/success_criteria}}
+
+### Constraints
+{{#constraints}}
+- **{{constraint_type}}**: {{constraint_description}}
+{{/constraints}}
+
+## Requirements Analysis
+
+### Functional Requirements
+{{#functional_requirements}}
+#### {{requirement_category}}
+{{#requirements}}
+- **{{requirement_name}}**: {{requirement_description}} (Priority: {{priority}})
+{{/requirements}}
+{{/functional_requirements}}
+
+### Non-Functional Requirements
+{{#non_functional_requirements}}
+#### {{requirement_category}}
+{{#requirements}}
+- **{{requirement_name}}**: {{requirement_description}} (Target: {{target_value}})
+{{/requirements}}
+{{/non_functional_requirements}}
+
+### Integration Requirements
+{{#integration_requirements}}
+- **{{integration_point}}**: {{integration_description}} (Type: {{integration_type}})
+{{/integration_requirements}}
+
+## Evaluation Criteria
+
+### Scoring Framework
+| Criterion | Weight | Description |
+|-----------|---------|-------------|
+{{#evaluation_criteria}}
+| {{criterion_name}} | {{weight}}% | {{criterion_description}} |
+{{/evaluation_criteria}}
+
+### Evaluation Process
+{{evaluation_process_description}}
+
+## Tool Options Evaluated
+
+{{#tools_evaluated}}
+### {{tool_name}}
+
+#### Overview
+- **Vendor**: {{vendor_name}}
+- **Version**: {{tool_version}}
+- **License**: {{license_type}}
+- **Pricing Model**: {{pricing_model}}
+
+#### Functional Assessment
+{{#functional_scores}}
+- **{{function_name}}**: {{score}}/10 ({{assessment_notes}})
+{{/functional_scores}}
+
+#### Non-Functional Assessment
+{{#non_functional_scores}}
+- **{{nfr_name}}**: {{score}}/10 ({{assessment_notes}})
+{{/non_functional_scores}}
+
+#### Pros
+{{#pros}}
+- {{pro}}
+{{/pros}}
+
+#### Cons
+{{#cons}}
+- {{con}}
+{{/cons}}
+
+#### Total Score
+**Overall Score**: {{total_score}}/10
+**Weighted Score**: {{weighted_score}}
+
+#### Cost Analysis
+- **Initial Cost**: {{initial_cost}}
+- **Annual Cost**: {{annual_cost}}
+- **Implementation Cost**: {{implementation_cost}}
+- **Training Cost**: {{training_cost}}
+- **Total 3-Year TCO**: {{total_cost_3_year}}
+
+{{/tools_evaluated}}
+
+## Decision Outcome
+
+### Selected Tool
+**Choice**: {{selected_tool}}
+**Final Score**: {{final_score}}
+
+### Selection Rationale
+{{selection_rationale}}
+
+### Key Differentiators
+{{#key_differentiators}}
+- {{differentiator}}
+{{/key_differentiators}}
+
+### Runner-up Options
+{{#runner_up_tools}}
+- **{{tool_name}}**: {{runner_up_reason}}
+{{/runner_up_tools}}
+
+## Implementation Plan
+
+### Deployment Strategy
+{{deployment_strategy}}
+
+### Implementation Phases
+{{#implementation_phases}}
+#### Phase {{phase_number}}: {{phase_name}}
+- **Timeline**: {{phase_timeline}}
+- **Scope**: {{phase_scope}}
+- **Resources**: {{phase_resources}}
+- **Deliverables**: {{phase_deliverables}}
+- **Success Criteria**: {{phase_success_criteria}}
+{{/implementation_phases}}
+
+### Migration Plan
+{{migration_plan}}
+
+### Training Plan
+{{#training_plan}}
+#### {{training_type}}
+- **Audience**: {{training_audience}}
+- **Duration**: {{training_duration}}
+- **Delivery Method**: {{delivery_method}}
+- **Cost**: {{training_cost}}
+{{/training_plan}}
+
+## Risk Assessment
+
+### Implementation Risks
+{{#implementation_risks}}
+#### {{risk_category}}: {{risk_title}}
+- **Description**: {{risk_description}}
+- **Probability**: {{risk_probability}}
+- **Impact**: {{risk_impact}}
+- **Mitigation**: {{risk_mitigation}}
+{{/implementation_risks}}
+
+### Operational Risks
+{{#operational_risks}}
+- **Risk**: {{risk_description}}
+- **Mitigation**: {{mitigation_strategy}}
+{{/operational_risks}}
+
+### Vendor Risks
+{{#vendor_risks}}
+- **Risk**: {{risk_description}}
+- **Assessment**: {{risk_assessment}}
+- **Mitigation**: {{mitigation_approach}}
+{{/vendor_risks}}
+
+## Governance and Management
+
+### Tool Ownership
+- **Tool Owner**: {{tool_owner}}
+- **Technical Lead**: {{technical_lead}}
+- **Budget Owner**: {{budget_owner}}
+
+### Usage Policies
+{{#usage_policies}}
+- **{{policy_area}}**: {{policy_description}}
+{{/usage_policies}}
+
+### Compliance Requirements
+{{#compliance_requirements}}
+- **{{requirement_name}}**: {{requirement_description}} (Status: {{compliance_status}})
+{{/compliance_requirements}}
+
+### Support Model
+- **Vendor Support**: {{vendor_support_level}}
+- **Internal Support**: {{internal_support_model}}
+- **Escalation Process**: {{escalation_process}}
+
+## Monitoring and Success Measurement
+
+### Key Performance Indicators
+{{#kpis}}
+- **{{kpi_name}}**: {{kpi_description}} (Baseline: {{baseline}}, Target: {{target}})
+{{/kpis}}
+
+### Usage Metrics
+{{#usage_metrics}}
+- **{{metric_name}}**: {{metric_description}} (Target: {{metric_target}})
+{{/usage_metrics}}
+
+### ROI Calculation
+- **Investment**: {{total_investment}}
+- **Expected Annual Savings**: {{annual_savings}}
+- **Expected Productivity Gains**: {{productivity_gains}}
+- **Payback Period**: {{payback_period}}
+- **3-Year ROI**: {{three_year_roi}}%
+
+### Review Schedule
+- **30-Day Review**: {{thirty_day_review}}
+- **90-Day Review**: {{ninety_day_review}}
+- **Annual Review**: {{annual_review}}
+
+## Integration and Technical Details
+
+### Architecture Integration
+{{architecture_integration}}
+
+### Data Integration
+{{#data_integrations}}
+- **{{system_name}}**: {{integration_method}} (Frequency: {{sync_frequency}})
+{{/data_integrations}}
+
+### Security Integration
+{{security_integration}}
+
+### Backup and Recovery
+{{backup_recovery_plan}}
+
+## Documentation and Knowledge Transfer
+
+### Documentation Requirements
+{{#documentation_needs}}
+- **{{document_type}}**: {{document_description}} (Owner: {{document_owner}})
+{{/documentation_needs}}
+
+### Knowledge Transfer Plan
+{{knowledge_transfer_plan}}
+
+### User Adoption Strategy
+{{user_adoption_strategy}}
+
+## Future Considerations
+
+### Scalability Planning
+{{scalability_planning}}
+
+### Evolution Path
+{{evolution_path}}
+
+### Exit Strategy
+{{exit_strategy}}
+
+### Technology Roadmap Alignment
+{{roadmap_alignment}}
+
+## Lessons Learned
+
+### Selection Process Improvements
+{{#process_improvements}}
+- {{improvement}}
+{{/process_improvements}}
+
+### Evaluation Criteria Refinements
+{{#criteria_refinements}}
+- {{refinement}}
+{{/criteria_refinements}}
+
+---
+*Generated from Nexus v5 Tool Selection Template*
+*Decision Status: {{decision_status}}*
+*Next Review: {{next_review_date}}*

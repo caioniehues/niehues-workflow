@@ -1,0 +1,129 @@
+# Nexus Task File Template v{{template_version}}
+
+metadata:
+  id: "{{task_id}}"
+  title: "{{task_title}}"
+  description: "{{task_description}}"
+  created: "{{creation_date}}"
+  updated: "{{last_updated}}"
+  owner: "{{task_owner}}"
+  workstream: "{{workstream_name}}"
+
+classification:
+  type: "{{task_type}}" # implementation|research|design|testing|documentation
+  priority: "{{priority}}" # critical|high|medium|low
+  complexity: "{{complexity}}" # simple|moderate|complex|expert
+  estimated_effort: "{{effort_estimate}}" # hours or story points
+
+execution:
+  parallel: {{parallel_execution}} # true|false
+  dependencies:
+    {{#dependencies}}
+    - task_id: "{{dependency_id}}"
+      type: "{{dependency_type}}" # blocks|enables|informs
+      status: "{{dependency_status}}" # pending|satisfied|blocked
+    {{/dependencies}}
+
+  prerequisites:
+    {{#prerequisites}}
+    - "{{prerequisite}}"
+    {{/prerequisites}}
+
+objectives:
+  primary: "{{primary_objective}}"
+  secondary:
+    {{#secondary_objectives}}
+    - "{{objective}}"
+    {{/secondary_objectives}}
+
+deliverables:
+  {{#deliverables}}
+  - name: "{{deliverable_name}}"
+    type: "{{deliverable_type}}" # code|document|configuration|test
+    location: "{{deliverable_path}}"
+    acceptance_criteria:
+      {{#criteria}}
+      - "{{criterion}}"
+      {{/criteria}}
+  {{/deliverables}}
+
+implementation:
+  approach: "{{implementation_approach}}"
+
+  steps:
+    {{#implementation_steps}}
+    - step: {{step_number}}
+      action: "{{step_action}}"
+      output: "{{expected_output}}"
+      validation: "{{validation_method}}"
+    {{/implementation_steps}}
+
+  technical_requirements:
+    {{#tech_requirements}}
+    - category: "{{requirement_category}}"
+      specification: "{{requirement_spec}}"
+    {{/tech_requirements}}
+
+  quality_gates:
+    {{#quality_gates}}
+    - gate: "{{gate_name}}"
+      criteria: "{{gate_criteria}}"
+      validation: "{{validation_method}}"
+    {{/quality_gates}}
+
+testing:
+  strategy: "{{testing_strategy}}"
+
+  test_cases:
+    {{#test_cases}}
+    - name: "{{test_name}}"
+      type: "{{test_type}}" # unit|integration|e2e|performance
+      scenario: "{{test_scenario}}"
+      expected_result: "{{expected_result}}"
+    {{/test_cases}}
+
+  coverage_targets:
+    unit: {{unit_coverage}}% # 80-100%
+    integration: {{integration_coverage}}% # 60-80%
+    e2e: {{e2e_coverage}}% # 40-60%
+
+risks:
+  {{#risks}}
+  - risk: "{{risk_description}}"
+    impact: "{{risk_impact}}" # low|medium|high|critical
+    probability: "{{risk_probability}}" # low|medium|high
+    mitigation: "{{mitigation_strategy}}"
+  {{/risks}}
+
+evolution:
+  metrics:
+    completion_percentage: {{completion_percentage}}%
+    quality_score: {{quality_score}}/10
+    effort_actual: "{{actual_effort}}"
+    effort_variance: "{{effort_variance}}%"
+
+  lessons_learned:
+    {{#lessons}}
+    - "{{lesson}}"
+    {{/lessons}}
+
+  improvements:
+    {{#improvements}}
+    - area: "{{improvement_area}}"
+      suggestion: "{{improvement_suggestion}}"
+      impact: "{{expected_impact}}"
+    {{/improvements}}
+
+# Status Tracking
+status:
+  current: "{{current_status}}" # planned|in_progress|blocked|testing|completed|cancelled
+  progress: {{progress_percentage}}%
+  last_activity: "{{last_activity_date}}"
+  next_milestone: "{{next_milestone}}"
+
+# Nexus Metadata
+x-nexus:
+  template_version: "{{template_version}}"
+  workflow_stage: "{{workflow_stage}}"
+  constitutional_compliance: {{constitutional_compliance}} # true|false
+  pattern_alignment: "{{pattern_alignment_score}}/10"

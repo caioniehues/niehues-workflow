@@ -1,0 +1,265 @@
+# Nexus Dependency Graph Template v{{template_version}}
+
+metadata:
+  project: "{{project_name}}"
+  scope: "{{dependency_scope}}" # project|feature|sprint|release
+  created: "{{creation_date}}"
+  updated: "{{last_updated}}"
+  owner: "{{graph_owner}}"
+
+graph_definition:
+  nodes:
+    {{#tasks}}
+    - id: "{{task_id}}"
+      name: "{{task_name}}"
+      type: "{{task_type}}" # implementation|research|design|testing|documentation
+      size: "{{task_size}}" # XS|S|M|L
+      priority: "{{task_priority}}" # critical|high|medium|low
+      status: "{{task_status}}" # planned|in_progress|blocked|completed|cancelled
+      owner: "{{task_owner}}"
+      estimated_effort: "{{effort_hours}}"
+      parallel_eligible: {{parallel_eligible}} # true|false
+
+      attributes:
+        complexity: "{{complexity_level}}"
+        risk_level: "{{risk_level}}"
+        resource_type: "{{required_resource_type}}"
+        skill_requirement: "{{required_skills}}"
+
+      timeline:
+        earliest_start: "{{earliest_start}}"
+        latest_start: "{{latest_start}}"
+        estimated_duration: "{{estimated_duration}}"
+        buffer_time: "{{buffer_time}}"
+    {{/tasks}}
+
+  edges:
+    {{#dependencies}}
+    - from: "{{from_task_id}}"
+      to: "{{to_task_id}}"
+      type: "{{dependency_type}}" # blocks|enables|informs|validates
+      strength: "{{dependency_strength}}" # hard|soft|preference
+      lag_time: "{{lag_time}}" # time delay between tasks
+      conditions: "{{dependency_conditions}}"
+
+      metadata:
+        reason: "{{dependency_reason}}"
+        created: "{{dependency_created}}"
+        validated: "{{dependency_validated}}"
+        impact_if_broken: "{{impact_assessment}}"
+    {{/dependencies}}
+
+analysis:
+  critical_path:
+    tasks: {{critical_path_tasks}}
+    total_duration: "{{critical_path_duration}}"
+    bottlenecks:
+      {{#bottlenecks}}
+      - task: "{{bottleneck_task}}"
+        reason: "{{bottleneck_reason}}"
+        impact: "{{bottleneck_impact}}"
+        mitigation: "{{bottleneck_mitigation}}"
+      {{/bottlenecks}}
+
+  parallel_opportunities:
+    {{#parallel_groups}}
+    - group_id: "{{group_id}}"
+      group_name: "{{group_name}}"
+      tasks: {{group_tasks}}
+      potential_savings: "{{time_savings}}"
+      resource_conflicts: {{resource_conflicts}}
+      risk_level: "{{parallel_risk_level}}"
+      prerequisites: {{group_prerequisites}}
+    {{/parallel_groups}}
+
+  resource_analysis:
+    {{#resource_conflicts}}
+    - resource: "{{resource_name}}"
+      conflicting_tasks: {{conflicting_tasks}}
+      conflict_duration: "{{conflict_duration}}"
+      resolution_strategy: "{{resolution_strategy}}"
+      priority_order: {{task_priority_order}}
+    {{/resource_conflicts}}
+
+  risk_assessment:
+    high_risk_paths:
+      {{#high_risk_paths}}
+      - path: {{risk_path_tasks}}
+        risk_factors: {{risk_factors}}
+        probability: "{{risk_probability}}"
+        impact: "{{risk_impact}}"
+        mitigation: "{{risk_mitigation}}"
+      {{/high_risk_paths}}
+
+    dependency_risks:
+      {{#dependency_risks}}
+      - dependency: "{{from_task}} → {{to_task}}"
+        risk_type: "{{risk_type}}" # technical|resource|timeline|external
+        description: "{{risk_description}}"
+        probability: "{{risk_probability}}"
+        impact: "{{risk_impact}}"
+        mitigation: "{{risk_mitigation}}"
+        contingency: "{{contingency_plan}}"
+      {{/dependency_risks}}
+
+execution_plan:
+  phases:
+    {{#execution_phases}}
+    - phase: {{phase_number}}
+      name: "{{phase_name}}"
+      start_date: "{{phase_start}}"
+      end_date: "{{phase_end}}"
+
+      tasks:
+        sequential: {{sequential_tasks}}
+        parallel: {{parallel_tasks}}
+
+      deliverables: {{phase_deliverables}}
+      success_criteria: {{phase_success_criteria}}
+
+      dependencies:
+        incoming: {{incoming_dependencies}}
+        outgoing: {{outgoing_dependencies}}
+
+      risks: {{phase_risks}}
+      mitigation: {{phase_mitigation}}
+    {{/execution_phases}}
+
+  milestones:
+    {{#milestones}}
+    - name: "{{milestone_name}}"
+      date: "{{milestone_date}}"
+      criteria: {{milestone_criteria}}
+      dependencies: {{milestone_dependencies}}
+      deliverables: {{milestone_deliverables}}
+      stakeholders: {{milestone_stakeholders}}
+    {{/milestones}}
+
+monitoring:
+  progress_tracking:
+    frequency: "{{tracking_frequency}}"
+    metrics:
+      {{#tracking_metrics}}
+      - metric: "{{metric_name}}"
+        target: "{{metric_target}}"
+        current: "{{metric_current}}"
+        trend: "{{metric_trend}}"
+      {{/tracking_metrics}}
+
+  dependency_validation:
+    last_validated: "{{last_validation}}"
+    validation_frequency: "{{validation_frequency}}"
+    issues_found: {{validation_issues}}
+
+    validation_checklist:
+      {{#validation_checklist}}
+      - check: "{{validation_check}}"
+        status: "{{check_status}}"
+        last_verified: "{{last_verified}}"
+      {{/validation_checklist}}
+
+  change_management:
+    change_process: "{{change_process}}"
+    approval_required: {{approval_required}}
+    impact_assessment: {{impact_assessment_required}}
+
+    recent_changes:
+      {{#recent_changes}}
+      - date: "{{change_date}}"
+        type: "{{change_type}}" # add|remove|modify|reorder
+        description: "{{change_description}}"
+        impact: "{{change_impact}}"
+        approved_by: "{{change_approver}}"
+      {{/recent_changes}}
+
+visualization:
+  mermaid_graph: |
+    graph TD
+    {{#mermaid_nodes}}
+        {{node_id}}[{{node_label}}]
+    {{/mermaid_nodes}}
+
+    {{#mermaid_edges}}
+        {{from_node}} -->{{edge_label}}> {{to_node}}
+    {{/mermaid_edges}}
+
+    {{#mermaid_groups}}
+        subgraph "{{group_name}}"
+            {{#group_nodes}}
+            {{node_id}}
+            {{/group_nodes}}
+        end
+    {{/mermaid_groups}}
+
+    classDef critical fill:#ff6b6b
+    classDef inProgress fill:#4ecdc4
+    classDef completed fill:#45b7d1
+    classDef parallel fill:#96ceb4
+
+    {{#node_classes}}
+    class {{node_id}} {{css_class}}
+    {{/node_classes}}
+
+tools_integration:
+  project_management:
+    tool: "{{pm_tool}}"
+    sync_frequency: "{{sync_frequency}}"
+    field_mapping: {{field_mapping}}
+
+  ci_cd_integration:
+    pipeline_dependencies: {{pipeline_dependencies}}
+    automated_triggers: {{automated_triggers}}
+    status_updates: {{status_updates}}
+
+  monitoring_integration:
+    alerts: {{dependency_alerts}}
+    dashboards: {{dependency_dashboards}}
+    reports: {{dependency_reports}}
+
+# Quality Assurance
+quality_gates:
+  dependency_validation:
+    {{#quality_gates}}
+    - gate: "{{gate_name}}"
+      criteria: "{{gate_criteria}}"
+      frequency: "{{gate_frequency}}"
+      owner: "{{gate_owner}}"
+    {{/quality_gates}}
+
+  graph_integrity:
+    no_circular_dependencies: {{circular_check}}
+    all_tasks_connected: {{connectivity_check}}
+    critical_path_valid: {{critical_path_check}}
+    resource_conflicts_resolved: {{resource_check}}
+
+# Evolution Tracking
+evolution:
+  version: "{{graph_version}}"
+  changelog:
+    {{#changelog}}
+    - version: "{{version}}"
+      date: "{{change_date}}"
+      changes: "{{changes}}"
+      impact: "{{impact}}"
+    {{/changelog}}
+
+  lessons_learned:
+    {{#lessons}}
+    - lesson: "{{lesson}}"
+      impact: "{{lesson_impact}}"
+      application: "{{lesson_application}}"
+    {{/lessons}}
+
+  improvements:
+    {{#improvements}}
+    - area: "{{improvement_area}}"
+      suggestion: "{{improvement_suggestion}}"
+      expected_benefit: "{{expected_benefit}}"
+    {{/improvements}}
+
+# Nexus Metadata
+x-nexus:
+  template_version: "{{template_version}}"
+  constitutional_compliance: {{constitutional_compliance}}
+  methodology_alignment: "{{methodology_alignment}}/10"
+  automation_level: "{{automation_level}}" # manual|semi-automated|automated

@@ -1,0 +1,42 @@
+# {{project_name}} DNA
+
+## Project Identity
+- **Vision**: {{vision_statement}}
+- **Mission**: {{mission_statement}}
+- **Values**: {{core_values}}
+
+## Technical DNA
+- **Architecture**: {{architecture_style}}
+- **Stack**: {{technology_stack}}
+- **Patterns**: {{preferred_patterns}}
+- **Constraints**: {{technical_constraints}}
+
+## Team DNA
+- **Size**: {{team_size}}
+- **Experience**: {{experience_level}}
+- **Methodologies**: {{development_methodologies}}
+- **Tools**: {{preferred_tools}}
+
+## Business DNA
+- **Domain**: {{business_domain}}
+- **Users**: {{target_users}}
+- **Scale**: {{expected_scale}}
+- **Timeline**: {{delivery_timeline}}
+
+## Evolution Markers
+- **Adaptability**: {{adaptability_score}}/10
+- **Innovation**: {{innovation_score}}/10
+- **Stability**: {{stability_score}}/10
+- **Growth**: {{growth_score}}/10
+
+## Decision Framework
+```yaml
+decision_criteria:
+  technical: {{technical_weight}}%
+  business: {{business_weight}}%
+  user: {{user_weight}}%
+  team: {{team_weight}}%
+```
+
+---
+*Generated from Nexus v5 Foundation Template*

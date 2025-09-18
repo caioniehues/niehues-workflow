@@ -1,0 +1,158 @@
+# Brainstorm Question Bank
+
+## Problem Definition Questions
+
+### Core Problem Understanding
+- What specific problem are we trying to solve?
+- Who experiences this problem and how often?
+- What is the current pain level (1-10) for affected users?
+- What happens if we don't solve this problem?
+- What are the root causes vs. symptoms?
+- How does this problem manifest in different scenarios?
+
+### Stakeholder Impact
+- Who are all the stakeholders affected by this problem?
+- Which stakeholder group is most impacted?
+- What are the different user personas involved?
+- How do stakeholder needs potentially conflict?
+- What are the political/organizational considerations?
+
+### Problem Scope and Boundaries
+- What is explicitly included in this problem scope?
+- What is explicitly excluded from this scope?
+- What are the edge cases we need to consider?
+- How does this problem relate to other known problems?
+- What assumptions are we making about the problem?
+
+## Solution Space Exploration
+
+### Approach Generation
+- What are 3 completely different ways to solve this?
+- What would the simplest possible solution look like?
+- What would the most comprehensive solution look like?
+- What would the fastest solution look like?
+- What would the most maintainable solution look like?
+- How have similar problems been solved elsewhere?
+
+### Innovation Questions
+- What if we had unlimited resources?
+- What if we had zero budget?
+- What if this had to work for 100x more users?
+- What if this had to be implemented in 1 week?
+- What assumptions can we challenge?
+- What would a completely different technology enable?
+
+### Alternative Perspectives
+- How would [specific role/department] approach this?
+- What would a startup do differently than an enterprise?
+- How would this be solved 10 years ago vs. today?
+- What would the user do if this feature didn't exist?
+- How do competitors handle this problem?
+
+## Constraints and Requirements
+
+### Technical Constraints
+- What technology stack must we use?
+- What existing systems must we integrate with?
+- What performance requirements exist?
+- What scalability requirements exist?
+- What security constraints apply?
+- What data privacy regulations affect this?
+
+### Business Constraints
+- What is the budget range for this solution?
+- What is the timeline constraint?
+- What resources (people/skills) are available?
+- What are the business priorities?
+- What compliance requirements exist?
+- What are the success metrics?
+
+### User Constraints
+- What devices/platforms must be supported?
+- What user skill levels must be accommodated?
+- What accessibility requirements exist?
+- What internationalization needs exist?
+- What offline functionality is needed?
+
+## Success and Failure Analysis
+
+### Success Criteria
+- How will we measure success quantitatively?
+- What qualitative indicators will show success?
+- What would "wildly successful" look like?
+- What would "minimum viable success" look like?
+- How will different stakeholders define success?
+
+### Failure Modes
+- What could go wrong with each approach?
+- What would failure look like?
+- What are the highest-risk elements?
+- What dependencies could fail?
+- How would we detect failure early?
+- What would be the cost of failure?
+
+### Risk Assessment
+- What are the technical risks?
+- What are the business risks?
+- What are the user adoption risks?
+- What are the security/compliance risks?
+- What are the competitive risks?
+- How can we mitigate each risk?
+
+## Implementation Considerations
+
+### Effort Estimation
+- What is the rough complexity level (XS/S/M/L/XL)?
+- What skills/expertise are required?
+- What are the unknowns that could affect estimates?
+- What research/learning is needed?
+- What prototyping might be valuable?
+
+### Dependencies and Integration
+- What other systems/teams does this depend on?
+- What changes would other teams need to make?
+- What external services/APIs are involved?
+- What data migration might be needed?
+- What backward compatibility is required?
+
+### Rollout Strategy
+- How would we deploy this safely?
+- What would a pilot program look like?
+- How would we handle rollback if needed?
+- What user communication is needed?
+- What training/documentation is required?
+
+## Quality and Maintenance
+
+### Quality Assurance
+- How would we test this thoroughly?
+- What edge cases are most important to test?
+- What performance testing is needed?
+- What security testing is required?
+- How would we ensure accessibility?
+
+### Long-term Considerations
+- How would this solution evolve over time?
+- What maintenance burden would this create?
+- How would this scale as usage grows?
+- What would happen as requirements change?
+- How would this integrate with future plans?
+
+## Decision Framework
+
+### Evaluation Criteria
+- What criteria should we use to compare approaches?
+- How should we weight different factors?
+- What are the deal-breakers vs. nice-to-haves?
+- Who needs to be involved in the decision?
+- What information do we need to decide?
+
+### Validation Questions
+- How can we validate our assumptions cheaply?
+- What experiments could we run?
+- Who should we get feedback from?
+- What prototypes would be valuable?
+- How can we reduce uncertainty before committing?
+
+---
+*Generated from Nexus v5 Brainstorm Question Bank Template*

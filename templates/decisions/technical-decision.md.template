@@ -1,0 +1,197 @@
+# Technical Decision Record: {{decision_title}}
+
+## Decision Metadata
+**ID**: {{decision_id}}
+**Date**: {{decision_date}}
+**Status**: {{status}}
+**Deciders**: {{deciders}}
+**Consulted**: {{consulted_parties}}
+**Informed**: {{informed_parties}}
+
+## Context and Problem Statement
+{{problem_statement}}
+
+### Background
+{{background_information}}
+
+### Business Context
+{{business_context}}
+
+### Technical Context
+{{technical_context}}
+
+### Constraints
+{{#constraints}}
+- **{{constraint_type}}**: {{constraint_description}}
+{{/constraints}}
+
+## Decision Drivers
+{{#drivers}}
+- {{driver_description}} (Weight: {{driver_weight}})
+{{/drivers}}
+
+## Considered Options
+{{#options}}
+### Option {{option_number}}: {{option_name}}
+**Description**: {{option_description}}
+
+**Pros**:
+{{#pros}}
+- {{pro}}
+{{/pros}}
+
+**Cons**:
+{{#cons}}
+- {{con}}
+{{/cons}}
+
+**Cost**: {{option_cost}}
+**Risk**: {{option_risk}}
+**Complexity**: {{option_complexity}}
+{{/options}}
+
+## Decision Outcome
+
+### Chosen Option
+**Selected**: {{chosen_option}}
+
+### Rationale
+{{decision_rationale}}
+
+### Expected Benefits
+{{#expected_benefits}}
+- {{benefit}}
+{{/expected_benefits}}
+
+### Accepted Trade-offs
+{{#trade_offs}}
+- {{trade_off}}
+{{/trade_offs}}
+
+## Implementation Plan
+
+### Implementation Steps
+{{#implementation_steps}}
+#### Step {{step_number}}: {{step_title}}
+- **Description**: {{step_description}}
+- **Owner**: {{step_owner}}
+- **Timeline**: {{step_timeline}}
+- **Dependencies**: {{step_dependencies}}
+{{/implementation_steps}}
+
+### Success Criteria
+{{#success_criteria}}
+- {{criterion}}
+{{/success_criteria}}
+
+### Risk Mitigation
+{{#risks}}
+#### {{risk_title}}
+- **Risk**: {{risk_description}}
+- **Probability**: {{risk_probability}}
+- **Impact**: {{risk_impact}}
+- **Mitigation**: {{risk_mitigation}}
+{{/risks}}
+
+## Monitoring and Review
+
+### Success Metrics
+{{#metrics}}
+- **{{metric_name}}**: {{metric_description}} (Target: {{metric_target}})
+{{/metrics}}
+
+### Review Schedule
+- **30-Day Review**: {{thirty_day_review_date}}
+- **90-Day Review**: {{ninety_day_review_date}}
+- **Annual Review**: {{annual_review_date}}
+
+### Rollback Plan
+{{rollback_plan}}
+
+## Dependencies and Impact
+
+### Technical Dependencies
+{{#technical_dependencies}}
+- {{dependency}}
+{{/technical_dependencies}}
+
+### Systems Affected
+{{#affected_systems}}
+- **{{system_name}}**: {{impact_description}}
+{{/affected_systems}}
+
+### Teams Affected
+{{#affected_teams}}
+- **{{team_name}}**: {{team_impact}}
+{{/affected_teams}}
+
+## Documentation and Communication
+
+### Documentation Updates Needed
+{{#documentation_updates}}
+- {{document_name}}: {{update_description}}
+{{/documentation_updates}}
+
+### Training Requirements
+{{#training_requirements}}
+- **{{training_topic}}**: {{training_description}} (Audience: {{training_audience}})
+{{/training_requirements}}
+
+### Communication Plan
+{{#communication_items}}
+- **{{audience}}**: {{message}} (Channel: {{channel}}, Timing: {{timing}})
+{{/communication_items}}
+
+## Compliance and Governance
+
+### Compliance Impact
+{{compliance_impact}}
+
+### Security Considerations
+{{security_considerations}}
+
+### Privacy Impact
+{{privacy_impact}}
+
+### Audit Trail
+{{#audit_events}}
+- **{{event_date}}**: {{event_description}} (Actor: {{actor}})
+{{/audit_events}}
+
+## Related Decisions
+
+### Superseded Decisions
+{{#superseded_decisions}}
+- **{{decision_id}}**: {{decision_title}} (Reason: {{supersession_reason}})
+{{/superseded_decisions}}
+
+### Related Decisions
+{{#related_decisions}}
+- **{{decision_id}}**: {{decision_title}} (Relationship: {{relationship}})
+{{/related_decisions}}
+
+### Follow-up Decisions Needed
+{{#followup_decisions}}
+- {{decision_topic}} (Target Date: {{target_date}})
+{{/followup_decisions}}
+
+## Lessons Learned
+
+### What Went Well
+{{#went_well}}
+- {{lesson}}
+{{/went_well}}
+
+### What Could Be Improved
+{{#improvements}}
+- {{improvement}}
+{{/improvements}}
+
+### Process Improvements
+{{#process_improvements}}
+- {{process_improvement}}
+{{/process_improvements}}
+
+---
+*Generated from Nexus v5 Technical Decision Template*
+*Last Updated: {{last_updated}}*

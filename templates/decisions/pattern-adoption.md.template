@@ -1,0 +1,314 @@
+# Pattern Adoption Decision: {{pattern_name}}
+
+## Adoption Metadata
+**Decision ID**: {{decision_id}}
+**Pattern**: {{pattern_name}}
+**Adoption Date**: {{adoption_date}}
+**Decision Makers**: {{decision_makers}}
+**Pattern Source**: {{pattern_source}}
+**Review Period**: {{review_period}}
+
+## Pattern Overview
+
+### Pattern Description
+{{pattern_description}}
+
+### Pattern Category
+**Type**: {{pattern_type}}
+**Level**: {{pattern_level}}
+**Domain**: {{pattern_domain}}
+
+### Pattern Origin
+- **Source**: {{pattern_origin}}
+- **Maturity**: {{pattern_maturity}}
+- **Industry Usage**: {{industry_usage}}
+- **Community Support**: {{community_support}}
+
+### Current Usage
+- **Internal Usage**: {{internal_usage_count}} implementations
+- **Success Rate**: {{success_rate}}%
+- **Last Applied**: {{last_application_date}}
+
+## Context and Motivation
+
+### Business Context
+{{business_context}}
+
+### Technical Context
+{{technical_context}}
+
+### Problem Statement
+{{problem_statement}}
+
+### Current Approach Limitations
+{{#current_limitations}}
+- {{limitation}}
+{{/current_limitations}}
+
+### Expected Benefits
+{{#expected_benefits}}
+- {{benefit}}
+{{/expected_benefits}}
+
+## Pattern Analysis
+
+### Pattern Structure
+```{{pattern_language}}
+{{pattern_structure}}
+```
+
+### Implementation Variants
+{{#implementation_variants}}
+#### Variant {{variant_number}}: {{variant_name}}
+- **Description**: {{variant_description}}
+- **Use Case**: {{variant_use_case}}
+- **Complexity**: {{variant_complexity}}
+- **Pros**: {{variant_pros}}
+- **Cons**: {{variant_cons}}
+{{/implementation_variants}}
+
+### Pattern Dependencies
+{{#pattern_dependencies}}
+- **{{dependency_name}}**: {{dependency_description}} (Status: {{dependency_status}})
+{{/pattern_dependencies}}
+
+### Quality Attributes Impact
+{{#quality_attributes}}
+#### {{attribute_name}}
+- **Current State**: {{current_state}}
+- **Expected Impact**: {{expected_impact}}
+- **Measurement**: {{measurement_approach}}
+{{/quality_attributes}}
+
+## Adoption Assessment
+
+### Fit Analysis
+{{#fit_criteria}}
+- **{{criterion_name}}**: {{fit_score}}/10 ({{fit_rationale}})
+{{/fit_criteria}}
+
+### Complexity Assessment
+- **Implementation Complexity**: {{implementation_complexity}}/10
+- **Learning Curve**: {{learning_curve}}/10
+- **Maintenance Overhead**: {{maintenance_overhead}}/10
+- **Integration Effort**: {{integration_effort}}/10
+
+### Risk Assessment
+{{#adoption_risks}}
+#### {{risk_category}}: {{risk_title}}
+- **Description**: {{risk_description}}
+- **Probability**: {{risk_probability}}
+- **Impact**: {{risk_impact}}
+- **Mitigation**: {{risk_mitigation}}
+{{/adoption_risks}}
+
+## Alternative Patterns Considered
+
+{{#alternative_patterns}}
+### {{alternative_name}}
+- **Description**: {{alternative_description}}
+- **Pros**: {{alternative_pros}}
+- **Cons**: {{alternative_cons}}
+- **Rejection Reason**: {{rejection_reason}}
+{{/alternative_patterns}}
+
+## Adoption Decision
+
+### Decision Outcome
+**Status**: {{adoption_status}}
+**Recommended Variant**: {{recommended_variant}}
+**Adoption Scope**: {{adoption_scope}}
+
+### Decision Rationale
+{{decision_rationale}}
+
+### Adoption Strategy
+{{adoption_strategy}}
+
+### Success Criteria
+{{#success_criteria}}
+- {{criterion}}
+{{/success_criteria}}
+
+## Implementation Plan
+
+### Adoption Phases
+{{#adoption_phases}}
+#### Phase {{phase_number}}: {{phase_name}}
+- **Scope**: {{phase_scope}}
+- **Timeline**: {{phase_timeline}}
+- **Deliverables**: {{phase_deliverables}}
+- **Success Metrics**: {{phase_metrics}}
+{{/adoption_phases}}
+
+### Pilot Implementation
+- **Pilot Scope**: {{pilot_scope}}
+- **Pilot Timeline**: {{pilot_timeline}}
+- **Pilot Team**: {{pilot_team}}
+- **Success Thresholds**: {{pilot_thresholds}}
+
+### Rollout Plan
+{{#rollout_stages}}
+#### Stage {{stage_number}}: {{stage_name}}
+- **Target Systems**: {{target_systems}}
+- **Timeline**: {{stage_timeline}}
+- **Resources**: {{stage_resources}}
+- **Dependencies**: {{stage_dependencies}}
+{{/rollout_stages}}
+
+## Training and Knowledge Transfer
+
+### Training Requirements
+{{#training_requirements}}
+#### {{training_level}}
+- **Audience**: {{training_audience}}
+- **Content**: {{training_content}}
+- **Duration**: {{training_duration}}
+- **Delivery Method**: {{delivery_method}}
+{{/training_requirements}}
+
+### Documentation Requirements
+{{#documentation_requirements}}
+- **{{document_type}}**: {{document_description}} (Owner: {{document_owner}})
+{{/documentation_requirements}}
+
+### Knowledge Sharing Plan
+{{knowledge_sharing_plan}}
+
+### Mentoring Program
+{{mentoring_program}}
+
+## Governance and Standards
+
+### Usage Guidelines
+{{#usage_guidelines}}
+- **{{guideline_category}}**: {{guideline_description}}
+{{/usage_guidelines}}
+
+### Quality Gates
+{{#quality_gates}}
+- **{{gate_name}}**: {{gate_criteria}}
+{{/quality_gates}}
+
+### Review Process
+- **Pattern Usage Review**: {{usage_review_frequency}}
+- **Effectiveness Review**: {{effectiveness_review_frequency}}
+- **Evolution Review**: {{evolution_review_frequency}}
+
+### Compliance Requirements
+{{#compliance_requirements}}
+- **{{requirement_name}}**: {{requirement_description}}
+{{/compliance_requirements}}
+
+## Monitoring and Measurement
+
+### Adoption Metrics
+{{#adoption_metrics}}
+- **{{metric_name}}**: {{metric_description}} (Target: {{metric_target}})
+{{/adoption_metrics}}
+
+### Effectiveness Metrics
+{{#effectiveness_metrics}}
+- **{{metric_name}}**: {{metric_description}} (Baseline: {{baseline}}, Target: {{target}})
+{{/effectiveness_metrics}}
+
+### Quality Metrics
+{{#quality_metrics}}
+- **{{metric_name}}**: {{metric_description}} (Threshold: {{metric_threshold}})
+{{/quality_metrics}}
+
+### Feedback Collection
+{{feedback_collection_plan}}
+
+## Impact Assessment
+
+### Immediate Impact
+{{#immediate_impacts}}
+- **{{impact_area}}**: {{impact_description}}
+{{/immediate_impacts}}
+
+### Long-term Impact
+{{#long_term_impacts}}
+- **{{impact_area}}**: {{impact_description}}
+{{/long_term_impacts}}
+
+### ROI Analysis
+- **Implementation Cost**: {{implementation_cost}}
+- **Expected Savings**: {{expected_savings}}
+- **Productivity Gains**: {{productivity_gains}}
+- **Quality Improvements**: {{quality_improvements}}
+- **Estimated ROI**: {{estimated_roi}}%
+
+## Evolution and Maintenance
+
+### Pattern Evolution Strategy
+{{pattern_evolution_strategy}}
+
+### Maintenance Plan
+{{#maintenance_activities}}
+- **{{activity_name}}**: {{activity_description}} (Frequency: {{activity_frequency}})
+{{/maintenance_activities}}
+
+### Deprecation Strategy
+{{deprecation_strategy}}
+
+### Migration Path
+{{migration_path}}
+
+## Integration with Existing Patterns
+
+### Pattern Relationships
+{{#pattern_relationships}}
+- **{{related_pattern}}**: {{relationship_type}} ({{relationship_description}})
+{{/pattern_relationships}}
+
+### Architectural Alignment
+{{architectural_alignment}}
+
+### Consistency Requirements
+{{consistency_requirements}}
+
+### Conflict Resolution
+{{conflict_resolution_strategy}}
+
+## Lessons Learned and Future Considerations
+
+### Adoption Lessons
+{{#adoption_lessons}}
+- {{lesson}}
+{{/adoption_lessons}}
+
+### Process Improvements
+{{#process_improvements}}
+- {{improvement}}
+{{/process_improvements}}
+
+### Future Pattern Candidates
+{{#future_patterns}}
+- **{{pattern_name}}**: {{pattern_description}} (Priority: {{pattern_priority}})
+{{/future_patterns}}
+
+### Pattern Library Evolution
+{{pattern_library_evolution}}
+
+## Approval and Sign-off
+
+### Technical Approval
+{{#technical_approvers}}
+- **{{approver_name}}** ({{approver_role}}): {{approval_status}} on {{approval_date}}
+{{/technical_approvers}}
+
+### Architecture Review
+- **Architecture Board Review**: {{architecture_review_status}}
+- **Review Date**: {{architecture_review_date}}
+- **Review Notes**: {{architecture_review_notes}}
+
+### Stakeholder Sign-off
+{{#stakeholder_signoffs}}
+- **{{stakeholder_name}}** ({{stakeholder_role}}): {{signoff_status}} on {{signoff_date}}
+{{/stakeholder_signoffs}}
+
+---
+*Generated from Nexus v5 Pattern Adoption Template*
+*Adoption Status: {{current_status}}*
+*Next Review: {{next_review_date}}*

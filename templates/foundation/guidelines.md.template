@@ -1,0 +1,30 @@
+# {{project_name}} Guidelines
+
+## Project Overview
+**Created**: {{creation_date}}
+**Version**: {{version}}
+**Maintainer**: {{maintainer}}
+
+## Core Principles
+{{#principles}}
+- {{principle}}
+{{/principles}}
+
+## Development Standards
+- **Testing**: {{testing_approach}}
+- **Documentation**: {{documentation_standard}}
+- **Code Review**: {{review_process}}
+- **Deployment**: {{deployment_strategy}}
+
+## Quality Gates
+{{#quality_gates}}
+- {{gate_name}}: {{gate_criteria}}
+{{/quality_gates}}
+
+## Evolution Tracking
+- Last Updated: {{last_updated}}
+- Version: {{guidelines_version}}
+- Next Review: {{next_review_date}}
+
+---
+*Generated from Nexus v5 Foundation Template*

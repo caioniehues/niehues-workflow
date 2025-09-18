@@ -1,93 +1,96 @@
-# Nexus Enhanced Workflow - Claude Code Commands
+# Nexus Enhanced Workflow v5
 
-A comprehensive workflow methodology for Claude Code, implementing constitutional TDD enforcement with progressive context embedding and specialized agent architecture.
+## What is Nexus?
+Nexus is a self-improving development workflow methodology that learns from your patterns and evolves to match your needs. It's not software you install - it's a comprehensive workflow system you use with Claude to ensure high-quality development through unlimited questioning and flexible TDD practices.
 
-## Overview
+## Key Innovation
+Unlike traditional development methodologies, Nexus:
+- **Asks unlimited questions** until understanding is complete (no artificial limits)
+- **Enforces TDD flexibly** with documented exceptions for spikes and emergencies
+- **Learns continuously** at three levels (continuous, micro, formal)
+- **Evolves automatically** by extracting patterns and suggesting improvements
 
-This repository contains Claude Code markdown commands and documentation for the Nexus Enhanced Workflow - a quality-first development methodology that combines:
+## How It Works
 
-- **Constitutional TDD principles** - Immutable rules enforcing test-driven development
-- **Progressive context embedding** - Smart adaptive context management (200-2000 lines)
-- **Specialized agent roles** - Hard boundaries preventing role violations
-- **Unlimited adaptive questioning** - No limits until 85% confidence achieved
-- **6-phase pipeline** - Brainstorm → Specify → Decompose → Implement → Validate → Deploy
-
-## Claude Code Commands
-
-Available commands in `.claude/commands/`:
-
-### `/nexus-init`
-Initialize a new Nexus workflow project with constitutional framework and foundation templates.
-
-### `/nexus-brainstorm`
-Generate 20+ diverse creative approaches for any problem, categorized as conventional, innovative, experimental, and hybrid.
-
-### `/nexus-specify`
-Create detailed specifications from brainstorm results using SRS templates.
-
-### `/nexus-shard`
-Break large specifications into manageable shards (<500 lines) with epic/story/task hierarchy.
-
-### `/nexus-decompose`
-Transform specifications into atomic, self-contained tasks with embedded context.
-
-### `/nexus-implement`
-Begin TDD-enforced implementation with constitutional blocking on test violations.
-
-### `/nexus-validate`
-Run comprehensive validation including constitutional compliance, performance benchmarks, and security audits.
-
-## Documentation Structure
-
-```
-.claude/commands/    - Claude Code command markdown files
-docs/
-├── specs/          - Workflow specifications
-│   ├── nexus-enhanced-specification-v4.md   - Current enhanced spec
-│   ├── nexus-unified-specification-v4.md    - Unified spec (superseded)
-│   └── archive/    - Historical specifications
-└── research/       - Comparative workflow analysis and methodology studies
-CLAUDE.md           - Project instructions and implementation guidelines
+### 1. Initialize Your Project
+```bash
+/nexus-init  # Sets up .nexus/ directory with guidelines and tracking
 ```
 
-## Key Innovations
+### 2. Follow the Pipeline
+```
+BRAINSTORM → SPECIFY → DESIGN → DECOMPOSE → IMPLEMENT → VALIDATE → EVOLVE → MAINTAIN
+```
+Each phase has specialized agents and specific outputs.
 
-1. **Context Embedding**: Every task contains ALL needed context (no external lookups required)
-2. **Document Sharding**: Automatic breakdown of specs into <500 line manageable chunks
-3. **Hard Agent Boundaries**: Agents physically cannot violate their designated roles
-4. **Constitutional TDD**: System blocks any code without tests (not a suggestion, but enforcement)
-5. **Unlimited Questioning**: Continues asking until 85% confidence is achieved
+### 3. Let It Learn
+- Patterns extracted after 3+ repetitions
+- Questions added to templates after 5+ occurrences
+- Workflow improvements suggested continuously
 
-## Workflow Philosophy
+## Core Features
 
-The Nexus Enhanced Workflow enforces quality through:
-- **Constitutional principles** that cannot be overridden
-- **Progressive refinement** through unlimited adaptive questioning
-- **Context preservation** maintaining all decisions and rationale
-- **Hard boundaries** preventing shortcuts or quality compromises
+### 🎯 Unlimited Adaptive Questioning
+No limits on clarification - continues until complete understanding achieved.
 
-## Getting Started
+### 🛡️ Security-First Development
+SecurityGuardian agent reviews all code for vulnerabilities throughout pipeline.
 
-1. Use `/nexus-init` to establish your project's constitutional framework
-2. Use `/nexus-brainstorm` to generate creative approaches
-3. Use `/nexus-specify` to create detailed specifications
-4. Use `/nexus-shard` if specifications exceed 500 lines
-5. Use `/nexus-decompose` to create self-contained tasks
-6. Use `/nexus-implement` with TDD enforcement
-7. Use `/nexus-validate` for comprehensive quality checks
+### 📊 T-Shirt Task Sizing
+Clear estimation: XS (<30min), S (30-60min), M (1-2hr), L (2-4hr), XL (split!)
 
-## Success Metrics
+### 🔄 Three-Layer Evolution
+- **Continuous**: Pattern detection always running
+- **Micro**: Learning after each phase
+- **Formal**: Deep reflection after full pipeline
 
-- **Sharding**: 70% size reduction in specification chunks
-- **Context lookups**: 60% reduction through embedding
-- **Implementation time**: 30% reduction
-- **First-pass success**: 90% target
-- **TDD compliance**: 100% (constitutional enforcement)
+### 🔀 Backward Phase Navigation
+Jump back to any previous phase when issues discovered - realistic iterative development.
 
-## Reference Documentation
+## Project Structure
+```
+niehues-workflow/
+├── .nexus/          # Workflow data (created by /nexus-init)
+├── .claude/         # Claude commands and agents
+├── docs/            # Specifications and research
+├── examples/        # Usage examples
+├── templates/       # Reusable templates
+└── CLAUDE.md        # Claude integration instructions
+```
 
-See `CLAUDE.md` for detailed implementation guidelines and current task status.
+## Quick Start
+1. Open project in Claude
+2. Run `/nexus-init` to initialize workflow
+3. Start with `/nexus-brainstorm "your feature idea"`
+4. Follow the pipeline phases
+5. Watch the system learn and evolve
+
+## Documentation
+- **[Full Specification](docs/specs/nexus-enhanced-specification-v5.md)** - Complete v5 specification
+- **[Claude Integration](CLAUDE.md)** - How to use with Claude
+- **[Research & Analysis](docs/research/)** - Comparative workflow analysis
+
+## Philosophy
+- **Question everything, assume nothing**
+- **Test-driven by default, pragmatic when needed**
+- **Sequential execution, parallel when beneficial**
+- **Learn continuously, evolve systematically**
+
+## Status
+- ✅ **Specification**: Complete v5 specification ready
+- 🚧 **Implementation**: Commands and agents being developed
+- 📚 **Documentation**: Core docs complete, examples in progress
+
+## Contributing
+This is a workflow methodology, not traditional software. Contributions should focus on:
+- Command implementations (`.claude/commands/`)
+- Agent specifications (`.claude/agents/`)
+- Pattern templates (`templates/`)
+- Usage examples (`examples/`)
 
 ## License
+MIT - Use freely and adapt to your needs
 
-MIT
+---
+
+*Nexus v5 - Quality through understanding, evolution through learning*

@@ -1,0 +1,83 @@
+# Architectural Pattern: {{pattern_name}}
+
+## Pattern Overview
+**Category**: {{pattern_category}}
+**Scale**: {{scale_level}}
+**Complexity**: {{complexity_level}}
+**Created**: {{creation_date}}
+
+## Problem
+{{problem_description}}
+
+## Context
+{{context_description}}
+
+## Solution
+{{solution_description}}
+
+## Architecture Diagram
+```
+{{architecture_diagram}}
+```
+
+## Components
+{{#components}}
+### {{component_name}}
+- **Responsibility**: {{responsibility}}
+- **Interface**: {{interface_description}}
+- **Dependencies**: {{dependencies}}
+{{/components}}
+
+## Interaction Patterns
+{{#interactions}}
+### {{interaction_name}}
+```
+{{interaction_sequence}}
+```
+{{/interactions}}
+
+## Implementation Guidelines
+{{#guidelines}}
+- {{guideline}}
+{{/guidelines}}
+
+## Quality Attributes
+- **Performance**: {{performance_characteristics}}
+- **Scalability**: {{scalability_characteristics}}
+- **Maintainability**: {{maintainability_characteristics}}
+- **Security**: {{security_characteristics}}
+
+## Trade-offs
+
+### Benefits
+{{#benefits}}
+- {{benefit}}
+{{/benefits}}
+
+### Drawbacks
+{{#drawbacks}}
+- {{drawback}}
+{{/drawbacks}}
+
+## Related Patterns
+{{#related_patterns}}
+- **{{pattern_name}}**: {{relationship_description}}
+{{/related_patterns}}
+
+## Technology Considerations
+{{#technologies}}
+- **{{technology_category}}**: {{technology_options}}
+{{/technologies}}
+
+## Evolution History
+- **Version**: {{version}}
+- **Usage Count**: {{usage_count}}
+- **Last Updated**: {{last_updated}}
+
+## Extraction Metadata
+- **Source Project**: {{source_project}}
+- **Detection Threshold**: {{detection_threshold}}
+- **Confidence Score**: {{confidence_score}}
+
+---
+*Generated from Nexus v5 Architectural Pattern Template*

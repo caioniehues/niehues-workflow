@@ -1,0 +1,225 @@
+# Task Breakdown: {{parent_task_name}}
+
+## Parent Task Overview
+**Parent ID**: {{parent_task_id}}
+**Total Estimate**: {{total_estimate}}
+**Target Delivery**: {{target_delivery}}
+**Breakdown Date**: {{breakdown_date}}
+
+## Breakdown Methodology
+**Approach**: {{breakdown_approach}}
+**Criteria**: {{breakdown_criteria}}
+**T-Shirt Sizing**: Applied (XS: <30min, S: 30-60min, M: 1-2hr, L: 2-4hr, XL: SPLIT!)
+
+## Sub-Tasks
+
+{{#subtasks}}
+### {{subtask_id}}: {{subtask_name}}
+
+**Size**: {{size}} ({{size_justification}})
+**Priority**: {{priority}}
+**Type**: {{task_type}}
+**Parallel**: {{parallel_eligible}}
+
+#### Scope
+{{subtask_scope}}
+
+#### Acceptance Criteria
+{{#acceptance_criteria}}
+- {{criterion}}
+{{/acceptance_criteria}}
+
+#### Dependencies
+{{#dependencies}}
+- **{{dependency_type}}**: {{dependency_description}}
+{{/dependencies}}
+
+#### Implementation Notes
+{{implementation_notes}}
+
+#### Testing Requirements
+{{testing_requirements}}
+
+#### Estimated Duration
+- **Optimistic**: {{optimistic_estimate}}
+- **Realistic**: {{realistic_estimate}}
+- **Pessimistic**: {{pessimistic_estimate}}
+
+---
+{{/subtasks}}
+
+## Task Dependencies Graph
+
+```mermaid
+graph TD
+{{#dependency_edges}}
+    {{from_task}} --> {{to_task}}
+{{/dependency_edges}}
+
+{{#parallel_groups}}
+    subgraph "Parallel Group {{group_number}}"
+        {{#parallel_tasks}}
+        {{task_id}}[{{task_name}}]
+        {{/parallel_tasks}}
+    end
+{{/parallel_groups}}
+```
+
+## Execution Strategy
+
+### Parallel Execution Opportunities
+{{#parallel_groups}}
+#### Group {{group_number}}: {{group_name}}
+**Tasks**: {{group_tasks}}
+**Estimated Savings**: {{time_savings}}
+**Prerequisites**: {{group_prerequisites}}
+{{/parallel_groups}}
+
+### Critical Path Analysis
+**Critical Path**: {{critical_path}}
+**Total Duration**: {{critical_path_duration}}
+**Buffer Time**: {{buffer_time}}
+
+### Resource Requirements
+{{#resource_requirements}}
+- **Resource Type**: {{resource_type}}
+- **Availability**: {{resource_availability}}
+- **Critical Tasks**: {{critical_tasks_requiring_resource}}
+{{/resource_requirements}}
+
+## Risk Assessment
+
+### Task-Level Risks
+{{#task_risks}}
+#### {{task_id}}: {{task_name}}
+- **Risk**: {{risk_description}}
+- **Impact**: {{risk_impact}}
+- **Mitigation**: {{risk_mitigation}}
+{{/task_risks}}
+
+### Integration Risks
+{{#integration_risks}}
+- **Area**: {{integration_area}}
+- **Risk**: {{integration_risk}}
+- **Tasks Affected**: {{affected_tasks}}
+- **Mitigation**: {{integration_mitigation}}
+{{/integration_risks}}
+
+## Quality Assurance Plan
+
+### Review Checkpoints
+{{#review_checkpoints}}
+- **Milestone**: {{milestone_name}}
+- **Tasks Completed**: {{completed_tasks}}
+- **Review Criteria**: {{review_criteria}}
+- **Reviewers**: {{reviewers}}
+{{/review_checkpoints}}
+
+### Testing Strategy
+{{#testing_strategy}}
+- **Level**: {{test_level}}
+- **Scope**: {{test_scope}}
+- **Responsible Tasks**: {{responsible_tasks}}
+- **Entry Criteria**: {{entry_criteria}}
+- **Exit Criteria**: {{exit_criteria}}
+{{/testing_strategy}}
+
+## Monitoring & Tracking
+
+### Progress Metrics
+{{#progress_metrics}}
+- **Metric**: {{metric_name}}
+- **Target**: {{metric_target}}
+- **Frequency**: {{measurement_frequency}}
+- **Responsible**: {{measurement_owner}}
+{{/progress_metrics}}
+
+### Reporting Schedule
+{{#reporting_schedule}}
+- **Frequency**: {{report_frequency}}
+- **Format**: {{report_format}}
+- **Recipients**: {{report_recipients}}
+- **Content**: {{report_content}}
+{{/reporting_schedule}}
+
+## Contingency Planning
+
+### Scope Adjustment Options
+{{#scope_adjustments}}
+- **Scenario**: {{adjustment_scenario}}
+- **Tasks to Defer**: {{deferred_tasks}}
+- **Impact**: {{adjustment_impact}}
+- **Decision Criteria**: {{decision_criteria}}
+{{/scope_adjustments}}
+
+### Resource Reallocation
+{{#resource_reallocation}}
+- **Trigger**: {{reallocation_trigger}}
+- **Source Tasks**: {{source_tasks}}
+- **Target Tasks**: {{target_tasks}}
+- **Impact Assessment**: {{impact_assessment}}
+{{/resource_reallocation}}
+
+## Success Criteria
+
+### Completion Definition
+{{#completion_criteria}}
+- **Category**: {{criteria_category}}
+- **Requirement**: {{completion_requirement}}
+- **Validation**: {{validation_method}}
+{{/completion_criteria}}
+
+### Quality Gates
+{{#quality_gates}}
+- **Gate**: {{gate_name}}
+- **Criteria**: {{gate_criteria}}
+- **Validation**: {{gate_validation}}
+- **Responsible**: {{gate_owner}}
+{{/quality_gates}}
+
+## Lessons from Previous Breakdowns
+
+### Best Practices Applied
+{{#best_practices}}
+- {{practice}}
+{{/best_practices}}
+
+### Known Pitfalls Avoided
+{{#avoided_pitfalls}}
+- {{pitfall}}
+{{/avoided_pitfalls}}
+
+### Improvements Made
+{{#improvements}}
+- {{improvement}}
+{{/improvements}}
+
+---
+
+## Breakdown Validation
+
+### Size Validation
+- **All tasks ≤ L-size**: {{size_validation}}
+- **No XL tasks**: {{xl_validation}}
+- **Balanced distribution**: {{distribution_validation}}
+
+### Dependency Validation
+- **No circular dependencies**: {{circular_validation}}
+- **Clear critical path**: {{path_validation}}
+- **Parallel opportunities identified**: {{parallel_validation}}
+
+### Coverage Validation
+- **All parent requirements covered**: {{coverage_validation}}
+- **No scope gaps**: {{gap_validation}}
+- **Acceptance criteria complete**: {{criteria_validation}}
+
+---
+
+## Evolution Tracking
+- **Breakdown Version**: {{breakdown_version}}
+- **Last Updated**: {{last_updated}}
+- **Next Review**: {{next_review_date}}
+- **Lessons Captured**: {{lessons_captured}}
+
+---
+*Generated from Nexus v5 Task Breakdown Template*

@@ -1,0 +1,239 @@
+# Security Question Bank
+
+## Threat Modeling and Risk Assessment
+
+### Asset Identification
+- What data assets need protection (personal data, financial data, IP, etc.)?
+- What system assets are critical (databases, APIs, user accounts, etc.)?
+- What business processes could be disrupted by security incidents?
+- What reputation or compliance risks exist?
+- What third-party assets or integrations are involved?
+
+### Threat Actor Analysis
+- Who might want to attack this system (criminals, competitors, insiders, nation-states)?
+- What motivations might attackers have (financial gain, disruption, espionage)?
+- What skill levels should we defend against (script kiddies vs. advanced persistent threats)?
+- What access might different threat actors have?
+- What resources might attackers invest in compromising this system?
+
+### Attack Vector Assessment
+- What are all the ways attackers could access the system?
+- What network paths exist to sensitive components?
+- What user interfaces could be exploited?
+- What APIs or integration points exist?
+- What physical access points exist?
+- What social engineering vectors are possible?
+
+### Impact Analysis
+- What would be the impact of a successful data breach?
+- What would be the cost of system downtime or corruption?
+- What regulatory penalties could result from security incidents?
+- What reputational damage could occur?
+- What competitive advantages could be lost?
+- What operational disruption could result?
+
+## Authentication and Authorization
+
+### Identity Management
+- How will users be identified and authenticated?
+- What authentication factors are required (something you know/have/are)?
+- How will we handle password policies and management?
+- What session management is needed?
+- How will we handle account lockouts and recovery?
+- What single sign-on (SSO) integration is needed?
+
+### Access Control
+- What roles and permissions are needed?
+- How granular should access controls be?
+- What principle of least privilege enforcement is needed?
+- How will we handle role hierarchies and inheritance?
+- What dynamic access controls are needed based on context?
+- How will we handle emergency access scenarios?
+
+### Authorization Enforcement
+- Where will authorization checks be implemented?
+- How will we ensure authorization is checked for all operations?
+- What happens when authorization fails?
+- How will we handle authorization for batch operations?
+- What caching of authorization decisions is safe?
+- How will we audit authorization decisions?
+
+## Data Protection
+
+### Data Classification
+- What data classification levels exist (public, internal, confidential, restricted)?
+- How should each classification level be protected?
+- What data residency requirements exist?
+- What cross-border data transfer restrictions apply?
+- How will data be labeled and tracked?
+
+### Encryption Requirements
+- What data must be encrypted at rest?
+- What data must be encrypted in transit?
+- What encryption algorithms and key lengths are required?
+- How will encryption keys be managed and rotated?
+- What key escrow or recovery mechanisms are needed?
+- How will we handle encryption performance impacts?
+
+### Data Loss Prevention
+- How will we prevent accidental data disclosure?
+- What data exfiltration detection is needed?
+- How will we control data copying and export?
+- What email and file sharing controls are needed?
+- How will we handle bring-your-own-device (BYOD) scenarios?
+- What cloud storage controls are required?
+
+### Data Retention and Destruction
+- How long should different types of data be retained?
+- How will we securely delete data when required?
+- What data anonymization or pseudonymization is needed?
+- How will we handle right-to-be-forgotten requests?
+- What backup and archive security is needed?
+
+## Network and Infrastructure Security
+
+### Network Segmentation
+- How should the network be segmented to contain breaches?
+- What firewall rules and network ACLs are needed?
+- How will we implement microsegmentation?
+- What VPN or secure remote access is required?
+- How will we secure internal east-west traffic?
+- What network monitoring and intrusion detection is needed?
+
+### Infrastructure Hardening
+- What operating system hardening is required?
+- What unnecessary services should be disabled?
+- How will we handle patching and vulnerability management?
+- What endpoint protection is needed?
+- How will we secure cloud infrastructure?
+- What container and orchestration security is required?
+
+### Secure Deployment
+- How will we secure the CI/CD pipeline?
+- What secrets management is needed for deployment?
+- How will we ensure secure configurations?
+- What infrastructure as code security is required?
+- How will we handle environment-specific security settings?
+- What deployment monitoring and validation is needed?
+
+## Application Security
+
+### Input Validation and Sanitization
+- What input validation is needed for all user inputs?
+- How will we prevent SQL injection attacks?
+- How will we prevent cross-site scripting (XSS)?
+- What file upload security is needed?
+- How will we handle API parameter validation?
+- What output encoding is required?
+
+### Secure Coding Practices
+- What secure coding standards will be followed?
+- How will we prevent common vulnerabilities (OWASP Top 10)?
+- What static and dynamic security testing is needed?
+- How will we handle cryptographic implementations?
+- What secure error handling is required?
+- How will we prevent timing attacks?
+
+### API Security
+- How will APIs be secured against common attacks?
+- What rate limiting and DoS protection is needed?
+- How will we implement proper authentication for APIs?
+- What input validation is needed for API parameters?
+- How will we prevent API abuse and scraping?
+- What API monitoring and logging is required?
+
+### Session Security
+- How will sessions be securely managed?
+- What session timeout policies are appropriate?
+- How will we prevent session fixation and hijacking?
+- What secure cookie settings are needed?
+- How will we handle concurrent sessions?
+- What logout and session cleanup is required?
+
+## Incident Response and Monitoring
+
+### Security Monitoring
+- What security events need to be logged and monitored?
+- What security information and event management (SIEM) is needed?
+- How will we detect and respond to anomalies?
+- What user behavior analytics are required?
+- How will we monitor for insider threats?
+- What threat intelligence integration is needed?
+
+### Incident Detection
+- How will we detect different types of security incidents?
+- What automated alerting and response is appropriate?
+- How will we distinguish between false positives and real threats?
+- What escalation procedures are needed?
+- How quickly must we detect different types of incidents?
+- What external threat feeds should be integrated?
+
+### Incident Response
+- What incident response procedures are needed?
+- Who should be notified for different types of incidents?
+- What evidence collection and preservation is required?
+- How will we handle incident communication?
+- What legal and regulatory notification requirements exist?
+- How will we handle incident recovery and lessons learned?
+
+### Forensics and Investigation
+- What logging is needed for forensic investigation?
+- How long should security logs be retained?
+- What tools and capabilities are needed for investigation?
+- How will we preserve evidence integrity?
+- What external forensic support might be needed?
+- How will we handle legal discovery requirements?
+
+## Compliance and Governance
+
+### Regulatory Compliance
+- What security regulations apply (SOX, HIPAA, PCI-DSS, etc.)?
+- What security controls are required for compliance?
+- How will we demonstrate compliance to auditors?
+- What documentation and evidence is required?
+- How often must compliance be validated?
+- What compliance monitoring is needed?
+
+### Security Governance
+- What security policies and procedures are needed?
+- Who is responsible for security decisions and oversight?
+- What security training is required for developers and users?
+- How will security be integrated into development processes?
+- What security metrics and reporting are needed?
+- How will security governance be enforced?
+
+### Privacy Requirements
+- What personal data protection requirements apply?
+- How will we handle consent management?
+- What data subject rights must be supported?
+- How will we conduct privacy impact assessments?
+- What privacy by design principles should be followed?
+- How will we handle cross-border privacy requirements?
+
+## Security Testing and Validation
+
+### Security Testing Strategy
+- What penetration testing is needed?
+- How will we conduct security code reviews?
+- What automated security testing should be integrated?
+- How will we test security controls and procedures?
+- What red team exercises are appropriate?
+- How will we validate incident response procedures?
+
+### Vulnerability Management
+- How will we identify and assess vulnerabilities?
+- What vulnerability scanning and assessment is needed?
+- How will we prioritize vulnerability remediation?
+- What patch management processes are required?
+- How will we handle zero-day vulnerabilities?
+- What vulnerability disclosure procedures are needed?
+
+### Security Metrics and KPIs
+- What security metrics will demonstrate effectiveness?
+- How will we measure security posture over time?
+- What security KPIs should be reported to management?
+- How will we benchmark security against industry standards?
+- What return on security investment measurements are needed?
+
+---
+*Generated from Nexus v5 Security Question Bank Template*

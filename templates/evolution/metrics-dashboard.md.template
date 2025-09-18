@@ -1,0 +1,177 @@
+# Nexus Metrics Dashboard: {{project_name}}
+
+## Dashboard Overview
+**Last Updated**: {{last_updated}}
+**Reporting Period**: {{reporting_period}}
+**Data Points**: {{data_point_count}}
+
+## Key Performance Indicators
+
+### 🎯 Workflow Efficiency
+```
+Pipeline Completion Rate: {{pipeline_completion_rate}}%
+Average Cycle Time: {{avg_cycle_time}} hours
+Parallel Execution Rate: {{parallel_execution_rate}}%
+```
+
+### 🔍 Question & Understanding Quality
+```
+Questions per Feature: {{avg_questions_per_feature}}
+Clarification Rounds: {{avg_clarification_rounds}}
+Understanding Confidence: {{understanding_confidence}}/10
+Requirement Changes: {{requirement_changes}}
+```
+
+### 🧪 Test-Driven Development
+```
+TDD Compliance: {{tdd_compliance}}%
+Test-First Ratio: {{test_first_ratio}}%
+Test Coverage: {{test_coverage}}%
+Test Pass Rate: {{test_pass_rate}}%
+```
+
+### 🔒 Security Integration
+```
+Security Reviews: {{security_reviews_count}}
+Vulnerabilities Found: {{vulnerabilities_found}}
+Security Patterns Applied: {{security_patterns_applied}}
+Compliance Score: {{compliance_score}}%
+```
+
+## Trend Analysis
+
+### 📈 Productivity Trends (Last 30 Days)
+```
+{{productivity_sparkline}}
+Week 1: {{week1_productivity}}
+Week 2: {{week2_productivity}}
+Week 3: {{week3_productivity}}
+Week 4: {{week4_productivity}}
+```
+
+### 📊 Quality Trends (Last 30 Days)
+```
+{{quality_sparkline}}
+Defect Rate: {{defect_rate_trend}}
+Code Quality: {{code_quality_trend}}
+Rework Rate: {{rework_rate_trend}}
+```
+
+### 🧠 Learning Trends (Last 30 Days)
+```
+{{learning_sparkline}}
+Patterns Extracted: {{patterns_extracted_trend}}
+Agent Invocations: {{agent_invocations_trend}}
+Evolution Reports: {{evolution_reports_trend}}
+```
+
+## Pattern Analytics
+
+### 🔄 Pattern Detection
+| Pattern Type | Total Found | This Period | Growth Rate |
+|--------------|-------------|-------------|-------------|
+| Code Patterns | {{code_patterns_total}} | {{code_patterns_period}} | {{code_patterns_growth}} |
+| Architecture Patterns | {{arch_patterns_total}} | {{arch_patterns_period}} | {{arch_patterns_growth}} |
+| Security Patterns | {{sec_patterns_total}} | {{sec_patterns_period}} | {{sec_patterns_growth}} |
+| Test Patterns | {{test_patterns_total}} | {{test_patterns_period}} | {{test_patterns_growth}} |
+
+### 📚 Pattern Usage
+{{#pattern_usage}}
+- **{{pattern_name}}**: Used {{usage_count}} times ({{usage_trend}})
+{{/pattern_usage}}
+
+## Agent Performance
+
+### 🤖 Agent Efficiency
+| Agent | Invocations | Success Rate | Avg Time | Impact Score |
+|-------|-------------|--------------|----------|--------------|
+{{#agents}}
+| {{agent_name}} | {{invocations}} | {{success_rate}}% | {{avg_time}}s | {{impact_score}}/10 |
+{{/agents}}
+
+### 🎯 Agent Specialization
+{{#agent_specialization}}
+**{{agent_name}}**
+- Primary Use Cases: {{primary_use_cases}}
+- Success Patterns: {{success_patterns}}
+- Optimization Areas: {{optimization_areas}}
+{{/agent_specialization}}
+
+## Quality Gates
+
+### ✅ Phase Quality Gates
+| Phase | Pass Rate | Avg Gate Time | Common Failures |
+|-------|-----------|---------------|-----------------|
+{{#quality_gates}}
+| {{phase_name}} | {{pass_rate}}% | {{avg_time}} | {{common_failures}} |
+{{/quality_gates}}
+
+### 🚨 Quality Alerts
+{{#quality_alerts}}
+- **{{alert_level}}**: {{alert_description}} (Threshold: {{threshold}}, Current: {{current_value}})
+{{/quality_alerts}}
+
+## Evolution Velocity
+
+### 🚀 Improvement Rate
+```
+Improvements Implemented: {{improvements_implemented}}
+Average Implementation Time: {{avg_implementation_time}} days
+Success Rate: {{improvement_success_rate}}%
+```
+
+### 📖 Learning Rate
+```
+New Patterns/Week: {{new_patterns_per_week}}
+Question Templates Added: {{question_templates_added}}
+Agent Proposals: {{agent_proposals}}
+```
+
+## Resource Utilization
+
+### ⏱️ Time Distribution
+```
+Brainstorming: {{brainstorm_time_percent}}%
+Specification: {{spec_time_percent}}%
+Design: {{design_time_percent}}%
+Implementation: {{implementation_time_percent}}%
+Validation: {{validation_time_percent}}%
+Evolution: {{evolution_time_percent}}%
+```
+
+### 👥 Team Engagement
+```
+Active Contributors: {{active_contributors}}
+Avg Session Duration: {{avg_session_duration}} hours
+Peak Activity Hours: {{peak_activity_hours}}
+```
+
+## Forecasting
+
+### 📅 Projected Metrics (Next 30 Days)
+```
+Estimated Completions: {{projected_completions}}
+Quality Trajectory: {{quality_trajectory}}
+Pattern Discovery Rate: {{pattern_discovery_rate}}
+```
+
+### 🎯 Target Achievements
+{{#target_achievements}}
+- **{{target_name}}**: {{progress}}% complete (Target: {{target_date}})
+{{/target_achievements}}
+
+## Action Items
+
+### 🔴 Critical Issues
+{{#critical_issues}}
+- {{issue_description}} (Impact: {{impact_level}})
+{{/critical_issues}}
+
+### 🟡 Optimization Opportunities
+{{#optimization_opportunities}}
+- {{opportunity_description}} (Potential Gain: {{potential_gain}})
+{{/optimization_opportunities}}
+
+---
+*Auto-generated from Nexus v5 Evolution Metrics*
+*Next Update: {{next_update_time}}*

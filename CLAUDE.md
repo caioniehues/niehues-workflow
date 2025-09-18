@@ -1,245 +1,173 @@
-# Nexus Enhanced Workflow Implementation - Task Creation Session
+# CLAUDE.md
 
-## Current Task
-Creating comprehensive STM tasks for the Nexus Enhanced Workflow implementation - a system that combines Nexus's TDD-first philosophy with BMAD-METHOD's context preservation innovations.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Key Specifications
-- **Main Spec**: `docs/specs/nexus-unified-specification-v4.md` - DEFINITIVE unified specification (single source of truth)
-- **Archived Specs**: `docs/specs/archive/` - Superseded documents (for historical reference only)
-- **Task Tracking**: `tracking/nexus-enhanced-tasks.yaml` - 85 tasks across 5 phases
-- **Implementation Timeline**: 8-12 weeks for full feature implementation
+## Repository Overview
 
-## Implementation Strategy
-Creating STM tasks with COMPLETE implementation details (not summaries). Each task must contain:
-- Full code implementations (copied verbatim, not referenced)
-- Complete technical requirements
-- Detailed acceptance criteria
-- All test scenarios
+Nexus v5 is a **workflow methodology**, not software. It's implemented through Claude commands and agents that guide development through unlimited questioning and flexible TDD practices.
 
-Using temp files for large content to preserve formatting:
-```bash
-cat > /tmp/task-details.txt << 'EOF'
-[Full implementation code and details]
-EOF
+## Key Understanding
 
-stm add "[Task Name]" \
-  --description "Brief what and why" \
-  --details "$(cat /tmp/task-details.txt)" \
-  --validation "Complete acceptance criteria" \
-  --tags "appropriate,tags" \
-  --deps "dependencies"
+**THIS IS NOT SOFTWARE** - Nexus is a methodology implemented through:
+- Claude command specifications (`.claude/commands/*.md`)
+- Agent specifications (`.claude/agents/*.md`)
+- File-based workflow tracking (`.nexus/`)
+- Templates and documentation
+
+## Available Commands
+
+
+### Commands to Implement (from task specifications)
+```
+/nexus-init          # Initialize workflow system
+/nexus-brainstorm    # Generate solution approaches through questioning
+/nexus-specify       # Create formal, testable specifications
+/nexus-design        # Architectural design with security focus
+/nexus-decompose     # Break into T-shirt sized tasks
+/nexus-implement     # Execute with TDD (RED-GREEN-REFACTOR)
+/nexus-validate      # Comprehensive quality verification
+/nexus-evolve        # Workflow reflection and learning
+/nexus-maintain      # Handle maintenance tasks
+/nexus-task          # Task management operations
+/nexus-pattern       # Pattern extraction and management
 ```
 
-## Progress Status (Current Implementation State)
+## High-Level Architecture
 
-### STM Tasks Status: 36 Completed / 50 Pending / 86 Total
-
-#### 🎉 Session Achievements (4 High-Priority Tasks Completed):
-- ✅ **Task 27**: SmartDefaults system - Intelligent default value generation
-- ✅ **Task 29**: DecisionLogger - Comprehensive decision tracking system
-- ✅ **Task 32**: PipelineValidator - End-to-end pipeline validation
-- ✅ **Task 33**: PerformanceBenchmarks - System performance measurement
-
-#### Phase 1: Foundation & Constitutional Framework - ✅ COMPLETED
-✅ **Core Foundation (1-12):**
-1. Constitutional types and interfaces
-2. ConstitutionalEnforcer class with TDD blocking
-3. Foundation file templates for project initialization
-4. /nexus-init command for project setup
-5. BrainstormEngine for 20+ approach generation
-6. SpecificationEngine with SRS template filling
-7. /nexus-shard command (duplicate removed)
-8. /nexus-shard command implementation
-9. BrainstormEngine for creative ideation
-10. ContextInheritance system
-11. /nexus-decompose command with context embedding
-12. /nexus-implement command with TDD enforcement
-
-✅ **Pipeline Commands (36-38):**
-- /nexus-brainstorm command
-- /nexus-specify command
-- DecomposeEngine class
-
-#### Phase 2: Context System & Document Sharding - ✅ COMPLETED
-✅ **Context & Sharding (13-15):**
-13. DocumentSharder class for specification breakdown
-14. ContextEmbedder class with smart adaptive context
-15. WorkflowOrchestrator for phase transitions
-
-#### Phase 3: Agent Specialization - ✅ COMPLETED
-✅ **Agent Implementation (16-22):**
-16. Agent Roles and BoundaryEnforcer
-17. SpecificationMaster agent
-18. TestArchitect agent
-19. ImplementationEngineer agent
-20. ShardSpecialist agent
-21. QualityGuardian agent
-22. AgentOrchestrator for coordination
-
-#### Phase 4: Intelligence & Learning - ✅ PARTIALLY COMPLETED
-✅ **Learning Systems (23-26, 28, 30):**
-23. AdaptiveQuestioningEngine
-24. ConfidenceCalculator system
-25. PatternLearningEngine
-26. EdgeCaseDetector
-28. WorkflowMetrics collector
-30. AmbiguityDetector
-
-#### Phase 5: Validation & Production - ✅ PARTIALLY STARTED
-✅ **Validation (31):**
-31. ConstitutionalValidator
-
-### 🚧 Next Priority Tasks (54 Pending)
-Focus areas for immediate implementation:
-- SmartDefaults system (27)
-- DecisionLogger (29)
-- Pipeline validation & benchmarks (32-35)
-- Task format standardization (40)
-- Dependency analysis (41-42)
-- Remaining learning & validation systems
-
-### Directory Structure Created
+### Pipeline Flow
 ```
-.nexus/{constitution,brainstorms,specs/{monolithic,sharded/{epics,stories}},tasks,patterns,templates,metrics}
-src/{engine/{constitution,context,agents,sharding,metrics,questioning,learning},pipeline,validation,types}
-tests/{unit,integration,e2e}
-.claude/{commands,agents}
-docs/{examples,architecture,api}
+BRAINSTORM ←→ SPECIFY ←→ DESIGN ←→ DECOMPOSE ←→ IMPLEMENT ←→ VALIDATE ←→ EVOLVE
+                                                                ↓
+                                                            MAINTAIN
+```
+**Key Feature**: Backward navigation allowed - can jump back to any phase when issues discovered.
+
+### Directory Structure
+```
+niehues-workflow/
+├── .nexus/                 # Workflow data (created by /nexus-init)
+│   ├── guidelines.md       # Editable project guidelines
+│   ├── brainstorms/        # Unlimited questioning outputs
+│   ├── specs/              # Formal specifications
+│   ├── design/             # Architecture designs
+│   ├── tasks/              # Task breakdowns with states
+│   ├── patterns/           # Extracted patterns (3+ repetitions)
+│   └── evolution/          # Learning at 3 layers
+│
+├── .claude/                # Claude integration
+│   ├── commands/           # Command implementations (TO BUILD)
+│   ├── agents/             # Agent specifications (TO BUILD)
+│   └── tasks/              # XML task specifications (COMPLETE)
+│
+└── docs/specs/             # Methodology specification (COMPLETE)
 ```
 
-### Files Created
-- `src/types/constitution.ts` - Constitutional type definitions
+### Agent System
 
-## Implementation Progress by Phase
+Agents are invoked via Claude's Task tool with `subagent_type`:
+- **questioning-agent**: Unlimited adaptive questioning
+- **pattern-detector**: Extracts patterns after 3+ repetitions
+- **security-guardian**: Security review throughout
+- **architecture-agent**: System design decisions
+- **workflow-reflector**: Evolution and learning
 
-### Phase 1: Foundation & Constitutional Framework - ✅ COMPLETED
-- ✅ Constitutional enforcement with TDD-first blocking
-- ✅ Foundation templates (constitution.md, project-dna.md, decision-log.md)
-- ✅ All pipeline commands (/nexus-brainstorm, /nexus-specify, /nexus-shard, /nexus-decompose, /nexus-implement)
+### Task Management
 
-### Phase 2: Context System & Document Sharding - ✅ COMPLETED
-- ✅ DocumentSharder: Breaks specs into <500 line shards
-- ✅ ContextEmbedder: Smart adaptive context (200-2000 lines based on confidence)
-- ✅ Context inheritance from previous tasks
-- ✅ Task files with embedded context (no external lookups needed)
+**12-State Machine**:
+PENDING → BLOCKED → WRITING_TEST → TEST_FAILING → IMPLEMENTING → TEST_PASSING → REVIEWING → NEEDS_REWORK → REFACTORING → PAUSED → CANCELLED → FAILED → DONE
 
-### Phase 3: Agent Specialization - ✅ COMPLETED
-- ✅ Hard boundaries preventing role violations
-- ✅ All specialized agents: SpecificationMaster, TestArchitect, ImplementationEngineer, ShardSpecialist, QualityGuardian
-- ✅ Agent orchestration and coordination
-- ⚠️ TDD enforcement engine integration (may need verification)
+**T-Shirt Sizing**:
+- XS: <30min
+- S: 30-60min
+- M: 1-2hr
+- L: 2-4hr
+- XL: MUST SPLIT!
 
-### Phase 4: Intelligence & Learning - 🚧 70% COMPLETED
-- ✅ Unlimited adaptive questioning (AdaptiveQuestioningEngine)
-- ✅ Pattern extraction and storage (PatternLearningEngine)
-- ✅ Workflow metrics collection (WorkflowMetrics)
-- ✅ Confidence calculation and edge case detection
-- 🚧 Pending: SmartDefaults, DecisionLogger
+**Parallel Marking**: Tasks marked [P] can execute simultaneously
 
-### Phase 5: Validation & Production - 🚧 20% COMPLETED
-- ✅ Constitutional compliance audit (ConstitutionalValidator)
-- 🚧 Pending: Performance benchmarking, Security audit, Production readiness validation
+## Critical Implementation Details
 
-## Key Innovations to Implement
+### From Task Specifications
 
-1. **Context Embedding**: Every task contains ALL needed context (200-2000 lines adaptive)
-2. **Document Sharding**: Specs broken into epic/story/task hierarchy (<500 lines each)
-3. **Hard Agent Boundaries**: Agents physically cannot violate their roles
-4. **Constitutional TDD**: System blocks any code without tests
-5. **Unlimited Questioning**: No limits until 85% confidence achieved
+1. **Task Files Location**: `.claude/tasks/nexus-task-*.md`
+   - All in XML format with deliverables
+   - Contains command/agent/template specifications
+   - NO TypeScript code (methodology only)
 
-## Next Priority Implementation Tasks
+2. **Command Format**:
+   ```markdown
+   ---
+   name: nexus-[command]
+   description: [purpose]
+   tools: Read, Write, Task, TodoWrite
+   implementation: .claude/commands/nexus-[command].md
+   ---
+   ```
 
-Critical path for system completion (54 pending tasks):
+3. **Evolution Triggers**:
+   - Pattern repeated 3+ times → Extract to template
+   - Question asked 5+ times → Add to questionnaire
+   - Task fails 2+ times → Process review
+   - Security issue → Immediate prevention rule
 
-### **Immediate Priority (Phase 4 & 5 Completion):**
-- [ ] **Task 27**: SmartDefaults system - Intelligent default value generation
-- [ ] **Task 29**: DecisionLogger - Comprehensive decision tracking system
-- [ ] **Task 32**: PipelineValidator - End-to-end pipeline validation
-- [ ] **Task 33**: PerformanceBenchmarks - System performance measurement
-- [ ] **Task 34**: SecurityAuditor - Security vulnerability detection
-- [ ] **Task 35**: ProductionReadinessValidator - Deployment readiness checks
+4. **TDD Exceptions Allowed**:
+   ```yaml
+   exploratory_spike: Max 2 hours
+   emergency_hotfix: Tests within 24 hours
+   proof_of_concept: Clearly marked as POC
+   ```
 
-### **Infrastructure & Integration:**
-- [ ] **Task 39**: PipelineIntegration system - Full workflow integration
-- [ ] **Task 40**: TaskFileFormat standardization - Unified task file structure
-- [ ] **Task 41**: DependencyGraphGenerator - Automated dependency analysis
-- [ ] **Task 42**: CriticalPathAnalyzer - Workflow optimization analysis
+## Development Workflow
 
-### **Advanced Features (Remaining 44 tasks):**
-- Context optimization, advanced learning systems, cross-project integration
-- Production deployment, monitoring, and enterprise features
-- Full system integration testing and validation
+### To implement a Nexus command:
+1. Read task specification from `.claude/tasks/`
+2. Extract command deliverable from XML
+3. Create command file in `.claude/commands/`
+4. Follow the specification's process flow
+5. Use TodoWrite for task tracking
 
-## Important Implementation Details
+### To use Nexus on a project:
+1. Run `/nexus-init` to create `.nexus/` structure
+2. Start with `/nexus-brainstorm "feature"`
+3. Follow pipeline phases sequentially
+4. Allow backward navigation when needed
+5. Let evolution capture learnings
 
-### Constitutional Enforcement Pattern
-```typescript
-// Always blocks execution on violations
-private blockViolation(violation: ConstitutionalViolation): never {
-  console.error(`🛑 CONSTITUTIONAL VIOLATION DETECTED`);
-  throw new Error(`Constitutional violation: ${violation.description}`);
-}
-```
+## Important Context
 
-### Context Embedding Structure
-```yaml
-embedded_context:
-  core_context: # Always included (200-500 lines)
-    - direct_requirements
-    - acceptance_criteria
-    - immediate_dependencies
-  extended_context: # If confidence < 85% (500-1000 lines)
-    - related_patterns
-    - historical_decisions
-    - edge_cases
-  reference_context: # Links only
-    - full_specification
-    - architecture_docs
-```
+### What Nexus IS:
+- A methodology for ensuring quality through questioning
+- A workflow that learns and evolves
+- File-based tracking and documentation
+- Claude command orchestration
 
-### Success Criteria Targets
-- Sharding: 70% size reduction
-- Context lookups: 60% reduction
-- Implementation time: 30% reduction
-- First-pass success: 90%
-- TDD compliance: 100% (constitutional)
+### What Nexus IS NOT:
+- Compiled software
+- Running services
+- TypeScript/JavaScript code
+- AI training system
 
-## Session Context
-- Using STM (Simple Task Master) for task management
-- Tasks must be self-contained with full implementations
-- No summaries or references - actual code must be included
-- Using temporary files for large content to preserve formatting
-- Following the claudekit guidelines for proper STM task creation
+### Key Principles:
+1. **Unlimited Questioning** - No artificial limits
+2. **Flexible TDD** - Strong default, documented exceptions
+3. **Continuous Evolution** - Three layers of learning
+4. **Pattern Extraction** - Reusable templates from repetition
 
-## Current Implementation Instructions
+## Task File Validation
 
-### Task Status Check:
-```bash
-# Check task completion status
-stm list --format json | jq -r '.[] | "\(.id): \(.status) - \(.title)"' | grep -E "(pending|in_progress)"
+When working with task files:
+- Must be valid XML structure
+- Escape `<` as `&lt;` in content
+- Contains only methodology documentation
+- No TypeScript/JavaScript code
+- Focus on command/agent specifications
 
-# Count completed vs pending
-echo "Completed: $(stm list --format json | jq -r '.[] | .status' | grep -c done)"
-echo "Pending: $(stm list --format json | jq -r '.[] | .status' | grep -c pending)"
-```
+## Current Status (2025-09-18)
 
-### Implementation Priority:
-1. **IMMEDIATE**: Start with Task 27 (SmartDefaults) - Critical for Phase 4 completion
-2. **HIGH**: Tasks 29, 32-35 (Core validation systems)
-3. **MEDIUM**: Tasks 39-42 (Infrastructure integration)
-4. **LOW**: Advanced features and enterprise systems
-
-### Implementation Approach:
-- All 86 tasks are created with full implementation details
-- Focus on actual code implementation and testing
-- Verify integration with existing completed components
-- Maintain constitutional compliance throughout
-- Use the existing task details as implementation blueprints
-
-### Success Metrics:
-- 32/86 tasks completed (37% done)
-- Phases 1-3 fully completed ✅
-- Phase 4: 70% completed 🚧
-- Phase 5: 20% completed 🚧
-- **Target**: 90%+ completion for production readiness
+- ✅ Specification complete (`docs/specs/nexus-enhanced-specification-v5.md`)
+- ✅ Task specifications complete (10 task files)
+- ✅ Tasks cleaned of TypeScript contamination
+- 🚧 Command implementations needed
+- 🚧 Agent specifications needed
+- 🚧 Templates needed
+- 🚧 Examples needed

@@ -1,0 +1,80 @@
+# Feature Specification: {{feature_name}}
+
+## Overview
+**Feature ID**: {{feature_id}}
+**Version**: {{spec_version}}
+**Created**: {{creation_date}}
+**Owner**: {{feature_owner}}
+
+## Problem Statement
+{{problem_description}}
+
+## Solution Overview
+{{solution_summary}}
+
+## Functional Requirements
+{{#functional_requirements}}
+### {{requirement_id}}: {{requirement_title}}
+- **Description**: {{requirement_description}}
+- **Priority**: {{priority}}
+- **Acceptance Criteria**:
+  {{#acceptance_criteria}}
+  - {{criteria}}
+  {{/acceptance_criteria}}
+{{/functional_requirements}}
+
+## Non-Functional Requirements
+{{#nfr_categories}}
+### {{category_name}}
+{{#requirements}}
+- {{requirement}}: {{specification}}
+{{/requirements}}
+{{/nfr_categories}}
+
+## Technical Specifications
+```yaml
+architecture:
+  pattern: {{architectural_pattern}}
+  components: {{components}}
+  interfaces: {{interfaces}}
+
+data_model:
+  entities: {{entities}}
+  relationships: {{relationships}}
+  constraints: {{constraints}}
+
+apis:
+  endpoints: {{api_endpoints}}
+  protocols: {{protocols}}
+  authentication: {{auth_method}}
+```
+
+## Implementation Plan
+{{#phases}}
+### Phase {{phase_number}}: {{phase_name}}
+- **Duration**: {{duration}}
+- **Deliverables**: {{deliverables}}
+- **Dependencies**: {{dependencies}}
+{{/phases}}
+
+## Testing Strategy
+- **Unit Tests**: {{unit_test_approach}}
+- **Integration Tests**: {{integration_test_approach}}
+- **E2E Tests**: {{e2e_test_approach}}
+- **Performance Tests**: {{performance_test_approach}}
+
+## Risks and Mitigations
+{{#risks}}
+- **Risk**: {{risk_description}}
+- **Impact**: {{impact_level}}
+- **Probability**: {{probability}}
+- **Mitigation**: {{mitigation_strategy}}
+{{/risks}}
+
+## Evolution Tracking
+- **Last Updated**: {{last_updated}}
+- **Review Cycle**: {{review_frequency}}
+- **Change Log**: {{change_history}}
+
+---
+*Generated from Nexus v5 Feature Specification Template*

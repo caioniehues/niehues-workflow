@@ -1,147 +1,181 @@
 ---
-command: nexus-implement
-description: TDD-enforced implementation with constitutional compliance
-arguments: --task [task-id] --mode [red|green|refactor] --strict-tdd
-tools:
-  - Read
-  - Write
-  - Edit
-  - MultiEdit
-  - Bash
-  - TodoWrite
+name: nexus-implement
+description: Execute test-driven implementation with quality enforcement
+tools: Read, Write, Edit, Bash, TodoWrite
+implementation: .claude/commands/nexus-implement.md
 ---
 
-# /nexus-implement - TDD-Enforced Implementation
+# /nexus-implement [task-id]
 
-## Overview
-Implements tasks using constitutional TDD enforcement. BLOCKS any code implementation without failing tests first.
+Execute implementation following TDD cycle with guideline enforcement.
 
-## Constitutional TDD Cycle (Mandatory)
+<pre_flight>
+  <check id="task_exists">
+    Load task from .nexus/tasks/
+    Verify task state is appropriate
+    Check dependencies completed
+  </check>
 
-### RED Phase (Write Failing Test First)
-```bash
-# 1. Load task context
-task_file=".nexus/tasks/${task_id}.md"
-context=$(extract_embedded_context "$task_file")
+  <check id="test_requirements">
+    Identify test file location
+    Verify test task completed first
+    Load test specifications
+  </check>
 
-# 2. Constitutional check: No implementation exists
-if implementation_exists; then
-  echo "🛑 CONSTITUTIONAL VIOLATION: Implementation found without test"
-  echo "Must delete implementation or add tests first"
-  exit 1
-fi
+  <check id="guidelines">
+    Load .nexus/guidelines.md
+    Check TDD compliance mode
+    Review exceptions if any
+  </check>
+</pre_flight>
 
-# 3. Generate test from acceptance criteria
-echo "📝 Generating failing tests from acceptance criteria..."
-generate_tests_from_criteria "$context"
+<tdd_cycle>
+  <red_phase>
+    **Write Failing Test**
 
-# 4. Verify test fails
-run_tests
-if [ $? -eq 0 ]; then
-  echo "🛑 CONSTITUTIONAL VIOLATION: Tests are passing without implementation"
-  echo "Tests must fail before implementation"
-  exit 1
-fi
+    1. Create/update test file
+    2. Write test for requirement
+    3. Run test to verify failure
+    4. Get user approval on test
 
-echo "✅ RED phase complete - Tests are failing"
-```
+    If test passes without implementation:
+    - Test may be inadequate
+    - Implementation may exist
+    - Investigate and correct
+  </red_phase>
 
-### GREEN Phase (Minimal Implementation)
-```bash
-# 1. Constitutional check: Tests exist and fail
-if ! tests_exist_and_fail; then
-  echo "🛑 CONSTITUTIONAL VIOLATION: No failing tests found"
-  echo "Must complete RED phase first"
-  exit 1
-fi
+  <green_phase>
+    **Write Minimal Implementation**
 
-# 2. Implement minimal code to pass tests
-echo "💚 Implementing minimal code to pass tests..."
-implement_minimal_solution "$context"
+    1. Write ONLY enough code to pass
+    2. No premature optimization
+    3. No extra features
+    4. Focus on making test green
 
-# 3. Verify tests pass
-run_tests
-if [ $? -ne 0 ]; then
-  echo "⚠️ Tests still failing - review implementation"
-  show_test_results
-  exit 1
-fi
+    Run test to verify passing
+  </green_phase>
 
-echo "✅ GREEN phase complete - Tests are passing"
-```
+  <refactor_phase>
+    **Improve Code Quality**
 
-### REFACTOR Phase (Quality Improvement)
-```bash
-# 1. Constitutional check: Tests exist and pass
-if ! tests_exist_and_pass; then
-  echo "🛑 CONSTITUTIONAL VIOLATION: Tests not passing"
-  echo "Must complete GREEN phase first"
-  exit 1
-fi
+    1. Remove duplication
+    2. Improve naming
+    3. Extract methods/functions
+    4. Apply patterns if appropriate
 
-# 2. Refactor for quality while keeping tests green
-echo "🔧 Refactoring for quality..."
-refactor_implementation "$context"
+    Run tests after each change
+    All tests must remain green
+  </refactor_phase>
+</tdd_cycle>
 
-# 3. Verify tests still pass
-run_tests
-if [ $? -ne 0 ]; then
-  echo "🛑 REFACTOR VIOLATION: Tests broke during refactor"
-  echo "Reverting changes..."
-  git_revert_refactor
-  exit 1
-fi
+<implementation_flow>
+  <step number="1">
+    **Update Task State**
 
-# 4. Check coverage
-coverage=$(calculate_coverage)
-if [ "$coverage" -lt 80 ]; then
-  echo "⚠️ Coverage below constitutional minimum (80%): $coverage%"
-  echo "Add more tests or justify exception"
-fi
+    Set state: WRITING_TEST
+    Update: .nexus/tasks/tracking.yaml
+  </step>
 
-echo "✅ REFACTOR phase complete - Quality improved, tests green"
-```
+  <step number="2">
+    **Write Test First**
 
-## Usage Examples
+    Create test following project conventions
+    Test must fail initially (RED)
+    Document what test validates
+  </step>
 
-### Basic Implementation (Full TDD Cycle)
-```bash
-# Complete TDD cycle for a task
-/nexus-implement --task AUTH-001 --strict-tdd
+  <step number="3">
+    **Get Test Approval**
 
-# Output:
-# 🔍 Enforcing RED phase (Tests First)...
-# ✅ RED phase compliant - Tests written and failing
-# 🔍 Enforcing GREEN phase (Minimal Implementation)...
-# ✅ GREEN phase compliant - Minimal implementation created
-# 🔍 Enforcing REFACTOR phase (Quality Improvement)...
-# ✅ REFACTOR phase compliant - Quality improved, tests green
-# 📊 Task AUTH-001 completed with 100% TDD compliance
-```
+    Show test to user
+    Explain coverage
+    Get confirmation to proceed
 
-### Individual Phase Implementation
-```bash
-# Run only RED phase
-/nexus-implement --task AUTH-001 --mode red
+    State: TEST_FAILING
+  </step>
 
-# Run only GREEN phase (after RED complete)
-/nexus-implement --task AUTH-001 --mode green
+  <step number="4">
+    **Implement Solution**
 
-# Run only REFACTOR phase (after GREEN complete)
-/nexus-implement --task AUTH-001 --mode refactor
-```
+    Write minimal code
+    Follow existing patterns
+    Use project conventions
 
-## Key Features
+    State: IMPLEMENTING
+  </step>
 
-- **Constitutional TDD Enforcement**: BLOCKS code without tests
-- **Context-Aware Implementation**: Uses embedded context only
-- **Automatic Test Generation**: From acceptance criteria
-- **Coverage Monitoring**: 80% minimum (constitutional)
-- **Decision Logging**: All implementation choices tracked
+  <step number="5">
+    **Verify Tests Pass**
 
-## Success Criteria
+    Run test suite
+    All tests must pass
+    No regression allowed
 
-- ✅ 100% TDD compliance (constitutional requirement)
-- ✅ 80%+ test coverage (constitutional minimum)
-- ✅ Zero constitutional violations
-- ✅ Complete decision audit trail
+    State: TEST_PASSING
+  </step>
+
+  <step number="6" subagent="security-guardian">
+    **Security Review**
+
+    Check for vulnerabilities
+    Review data handling
+    Verify authentication
+    Check authorization
+  </step>
+
+  <step number="7" subagent="pattern-detector">
+    **Pattern Extraction**
+
+    If code repeated 3+ times:
+    - Extract pattern
+    - Document in library
+    - Create template
+  </step>
+
+  <step number="8">
+    **Refactor if Needed**
+
+    Improve structure
+    Apply patterns
+    Enhance readability
+
+    State: REFACTORING
+  </step>
+
+  <step number="9">
+    **Final Validation**
+
+    Run full test suite
+    Check coverage metrics
+    Verify guidelines compliance
+
+    State: REVIEWING → DONE
+  </step>
+</implementation_flow>
+
+<tdd_exceptions>
+  Allowed exceptions (must document):
+
+  **Exploratory Spike**:
+  - Maximum 2 hours
+  - Must create tests after
+  - Document learnings
+
+  **Emergency Hotfix**:
+  - Tests within 24 hours
+  - Document in decision log
+  - Create debt ticket
+
+  **Proof of Concept**:
+  - Clearly marked as POC
+  - Not for production
+  - Tests before productionizing
+</tdd_exceptions>
+
+<outputs>
+  - Implemented code
+  - Passing tests
+  - Updated task state
+  - Pattern extractions
+  - Security review results
+</outputs>

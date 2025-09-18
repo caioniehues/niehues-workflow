@@ -1,0 +1,66 @@
+# Code Pattern: {{pattern_name}}
+
+## Pattern Overview
+**Category**: {{pattern_category}}
+**Complexity**: {{complexity_level}}
+**Applicability**: {{applicability_scope}}
+**Created**: {{creation_date}}
+
+## Problem
+{{problem_description}}
+
+## Context
+{{context_description}}
+
+## Solution
+{{solution_description}}
+
+## Structure
+```{{language}}
+{{code_structure}}
+```
+
+## Implementation
+```{{language}}
+{{implementation_code}}
+```
+
+## Usage Example
+```{{language}}
+{{usage_example}}
+```
+
+## Consequences
+
+### Benefits
+{{#benefits}}
+- {{benefit}}
+{{/benefits}}
+
+### Drawbacks
+{{#drawbacks}}
+- {{drawback}}
+{{/drawbacks}}
+
+## Related Patterns
+{{#related_patterns}}
+- **{{pattern_name}}**: {{relationship_description}}
+{{/related_patterns}}
+
+## Testing Strategy
+```{{language}}
+{{test_example}}
+```
+
+## Evolution History
+- **Version**: {{version}}
+- **Usage Count**: {{usage_count}}
+- **Last Updated**: {{last_updated}}
+
+## Extraction Metadata
+- **Source Project**: {{source_project}}
+- **Detection Threshold**: {{detection_threshold}}
+- **Confidence Score**: {{confidence_score}}
+
+---
+*Generated from Nexus v5 Code Pattern Template*

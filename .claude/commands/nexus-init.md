@@ -1,167 +1,131 @@
 ---
-command: nexus-init
-description: Initialize Nexus Enhanced Workflow for your project
-tools:
-  - Read
-  - Write
-  - Bash
-  - TodoWrite
-arguments:
-  - name: --force
-    description: Overwrite existing .nexus directory
-    required: false
-  - name: --template
-    description: Use specific project template (default, web, api, library)
-    required: false
-  - name: --skip-discovery
-    description: Skip interactive project discovery
-    required: false
+name: nexus-init
+description: Initialize Nexus v5 workflow with flexible guidelines
+tools: Read, Write, Glob, Bash, TodoWrite
+implementation: .claude/commands/nexus-init.md
 ---
 
-# Nexus Enhanced Workflow Initialization
+# /nexus-init
 
-This command sets up the complete Nexus workflow infrastructure for your project, including:
-- Constitutional framework with immutable principles
-- Project DNA discovery and documentation
-- Quality standards configuration
-- Foundation file generation
-- Directory structure creation
-- Initial metrics baseline
+Initialize Nexus Enhanced Workflow system for your project.
 
-## Usage
-```
-/nexus-init [--force] [--template=<type>] [--skip-discovery]
-```
+<pre_flight>
+  <check id="existing_nexus">
+    Check for existing .nexus directory
+    If exists: Confirm overwrite
+  </check>
 
-## Options
+  <check id="project_type">
+    Detect project technology:
+    - package.json → Node.js
+    - requirements.txt → Python
+    - go.mod → Go
+    - Cargo.toml → Rust
+    - pom.xml → Java
+  </check>
 
-### --force
-Overwrite an existing .nexus directory if it already exists. Use with caution as this will remove all existing workflow data.
+  <check id="testing_framework">
+    Identify test framework:
+    - Jest/Vitest for Node.js
+    - pytest for Python
+    - go test for Go
+    - cargo test for Rust
+  </check>
 
-### --template=<type>
-Apply a pre-configured template for specific project types:
-- `default`: Standard configuration for general projects
-- `web`: Optimized for web applications (React, Vue, Angular)
-- `api`: Optimized for API/backend services
-- `library`: Optimized for library/package development
+  <check id="git_repository">
+    Verify git repository exists
+    Check working directory status
+  </check>
+</pre_flight>
 
-### --skip-discovery
-Skip the interactive configuration process and use defaults. Useful for CI/CD or automated setups.
+<process_flow>
+  <step number="1">
+    **Get User Commitment**
 
-## What It Does
+    Display:
+    "Nexus v5 promotes Test-Driven Development (TDD)"
+    "Tests before code is the strong default"
+    "Documented exceptions allowed for spikes/emergencies"
 
-### Phase 1: Pre-flight Checks
-- Verifies no existing .nexus directory (unless --force)
-- Checks for Git repository (initializes if missing)
-- Detects project type and existing tools
-- Identifies CI/CD platform if present
+    Prompt: "Accept TDD guidelines? (y/n)"
 
-### Phase 2: Project Discovery
-- Analyzes codebase to detect:
-  - Primary programming language
-  - Framework and libraries in use
-  - Testing frameworks
-  - Database systems
-  - Package managers
-  - Project structure
+    Display:
+    "Nexus uses unlimited adaptive questioning"
+    "No artificial limits on clarification"
 
-### Phase 3: Interactive Configuration
-- Project mission and vision
-- Quality standards and thresholds
-- Branching strategy
-- Project values and principles
-- Architecture decisions
+    Prompt: "Accept unlimited questioning? (y/n)"
+  </step>
 
-### Phase 4: Directory Structure
-Creates the complete Nexus workflow directory structure:
-```
-.nexus/
-├── constitution.md       # Immutable principles
-├── project-dna.md        # Project identity
-├── quality-rules.md      # Quality standards
-├── decision-log.md       # Technical decisions
-├── brainstorms/          # Creative explorations
-├── specs/                # Specifications
-│   ├── monolithic/       # Full specs
-│   └── sharded/          # Broken down specs
-├── tasks/                # Task files
-├── patterns/             # Extracted patterns
-├── templates/            # Custom templates
-└── metrics/              # Performance metrics
-```
+  <step number="2">
+    **Create Directory Structure**
 
-### Phase 5: Foundation Files
-Generates customized foundation documents based on your project:
-- **constitution.md**: Immutable development principles
-- **project-dna.md**: Project identity and goals
-- **quality-rules.md**: Coding standards and metrics
-- **decision-log.md**: Technical decision record
+    .nexus/
+    ├── guidelines.md        # Editable project guidelines
+    ├── project-dna.md       # Technology and patterns
+    ├── decision-log.md      # Decision tracking
+    ├── brainstorms/         # Ideation outputs
+    ├── specs/               # Specifications
+    │   ├── monolithic/     # Full specs
+    │   └── sharded/        # Broken down specs
+    ├── design/              # Architecture designs
+    ├── tasks/               # Task breakdowns
+    ├── patterns/            # Extracted patterns
+    ├── agents/              # Custom agents
+    ├── evolution/           # Learning outputs
+    │   ├── continuous/     # Real-time patterns
+    │   ├── micro/          # Phase learnings
+    │   └── formal/         # Pipeline reflections
+    └── metrics/             # Performance tracking
+  </step>
 
-### Phase 6: Enforcement Setup
-- Git hooks for TDD compliance
-- VS Code workspace settings
-- CI/CD pipeline configuration
-- Constitutional enforcer initialization
+  <step number="3">
+    **Generate Guidelines File**
 
-### Phase 7: Metrics Initialization
-- Establishes baseline metrics
-- Sets quality targets
-- Enables performance tracking
+    Create .nexus/guidelines.md with:
+    - TDD practice configuration
+    - Exception documentation rules
+    - Question trigger patterns
+    - Code style preferences
+    - Security requirements
+  </step>
 
-### Phase 8: Initial Tasks
-Creates starter tasks to help your team:
-- Complete project DNA documentation
-- Configure CI/CD pipeline
-- Create first specification
-- Team onboarding
+  <step number="4">
+    **Generate Project DNA**
 
-## Examples
+    Create .nexus/project-dna.md with:
+    - Detected technology stack
+    - Testing framework
+    - Existing patterns found
+    - Code conventions detected
+  </step>
 
-### Basic Initialization
-```
-/nexus-init
-```
-Runs full interactive setup with project discovery.
+  <step number="5">
+    **Initialize Tracking Systems**
 
-### Force Overwrite
-```
-/nexus-init --force
-```
-Overwrites existing .nexus directory and reinitializes.
+    Create:
+    - decision-log.md with template
+    - evolution/triggers.yaml
+    - metrics/baseline.json
+  </step>
 
-### Use Web Template
-```
-/nexus-init --template=web
-```
-Applies web application optimized settings.
+  <step number="6">
+    **Display Success**
 
-### Automated Setup
-```
-/nexus-init --skip-discovery --template=api
-```
-Non-interactive setup using API template defaults.
+    Show:
+    - Created structure
+    - Next steps (/nexus-brainstorm)
+    - Documentation location
+  </step>
+</process_flow>
 
-## After Initialization
-
-Once initialized, you can use these commands:
-- `/nexus-brainstorm`: Generate 20+ creative approaches
-- `/nexus-specify`: Create detailed specifications
-- `/nexus-shard`: Break down large specifications
-- `/nexus-decompose`: Create task files with context
-- `/nexus-implement`: TDD-enforced implementation
-
-## Troubleshooting
-
-### "nexus directory already exists" Error
-Use `--force` flag to overwrite, or manually remove the .nexus directory.
-
-### "Not a git repository" Warning
-The command will automatically initialize git if not present.
-
-### Configuration Not Saved
-Check file permissions in your project directory.
-
-## Related Commands
-- `/nexus-help`: Get help with Nexus workflow
-- `/nexus-status`: Check workflow status
-- `/nexus-metrics`: View performance metrics
+<gates>
+  <gate id="commitment">
+    User must accept TDD and questioning
+  </gate>
+  <gate id="directories">
+    All directories created successfully
+  </gate>
+  <gate id="files">
+    Guidelines and DNA files generated
+  </gate>
+</gates>

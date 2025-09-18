@@ -1,0 +1,106 @@
+# Evolution Reflection Report: {{project_name}}
+
+## Report Metadata
+**Period**: {{reporting_period}}
+**Generated**: {{generation_date}}
+**Version**: {{report_version}}
+**Scope**: {{evaluation_scope}}
+
+## Executive Summary
+{{executive_summary}}
+
+## Key Metrics Evolution
+
+### Productivity Metrics
+| Metric | Previous Period | Current Period | Change | Trend |
+|--------|----------------|----------------|---------|-------|
+| Tasks Completed | {{prev_tasks}} | {{curr_tasks}} | {{task_change}} | {{task_trend}} |
+| Cycle Time | {{prev_cycle}} | {{curr_cycle}} | {{cycle_change}} | {{cycle_trend}} |
+| First-Pass Success | {{prev_success}}% | {{curr_success}}% | {{success_change}}% | {{success_trend}} |
+| Rework Rate | {{prev_rework}}% | {{curr_rework}}% | {{rework_change}}% | {{rework_trend}} |
+
+### Quality Metrics
+| Metric | Previous Period | Current Period | Change | Trend |
+|--------|----------------|----------------|---------|-------|
+| Defect Rate | {{prev_defects}} | {{curr_defects}} | {{defect_change}} | {{defect_trend}} |
+| Test Coverage | {{prev_coverage}}% | {{curr_coverage}}% | {{coverage_change}}% | {{coverage_trend}} |
+| Code Quality Score | {{prev_quality}} | {{curr_quality}} | {{quality_change}} | {{quality_trend}} |
+
+### Process Metrics
+| Metric | Previous Period | Current Period | Change | Trend |
+|--------|----------------|----------------|---------|-------|
+| TDD Compliance | {{prev_tdd}}% | {{curr_tdd}}% | {{tdd_change}}% | {{tdd_trend}} |
+| Pattern Usage | {{prev_patterns}} | {{curr_patterns}} | {{pattern_change}} | {{pattern_trend}} |
+| Questioning Depth | {{prev_questions}} | {{curr_questions}} | {{question_change}} | {{question_trend}} |
+
+## Patterns Extracted
+{{#patterns_extracted}}
+### {{pattern_name}}
+- **Type**: {{pattern_type}}
+- **Frequency**: {{frequency}}
+- **Confidence**: {{confidence}}
+- **Impact**: {{impact_rating}}
+- **Template Created**: {{template_path}}
+{{/patterns_extracted}}
+
+## Process Improvements Identified
+{{#improvements}}
+### {{improvement_title}}
+- **Category**: {{improvement_category}}
+- **Current State**: {{current_state}}
+- **Proposed State**: {{proposed_state}}
+- **Impact**: {{expected_impact}}
+- **Effort**: {{implementation_effort}}
+{{/improvements}}
+
+## Agent Performance Analysis
+{{#agent_performance}}
+### {{agent_name}}
+- **Invocations**: {{invocation_count}}
+- **Success Rate**: {{success_rate}}%
+- **Average Response Time**: {{avg_response_time}}
+- **Key Contributions**: {{key_contributions}}
+- **Optimization Opportunities**: {{optimization_areas}}
+{{/agent_performance}}
+
+## Workflow Bottlenecks
+{{#bottlenecks}}
+### {{bottleneck_name}}
+- **Phase**: {{phase_affected}}
+- **Frequency**: {{occurrence_frequency}}
+- **Impact**: {{impact_severity}}
+- **Root Cause**: {{root_cause}}
+- **Proposed Solution**: {{proposed_solution}}
+{{/bottlenecks}}
+
+## Learning Outcomes
+{{#learning_outcomes}}
+- **Learning**: {{learning_description}}
+- **Application**: {{application_context}}
+- **Evidence**: {{supporting_evidence}}
+{{/learning_outcomes}}
+
+## Recommendations
+
+### Immediate Actions (0-30 days)
+{{#immediate_actions}}
+- {{action_description}}
+{{/immediate_actions}}
+
+### Short-term Improvements (1-3 months)
+{{#short_term_improvements}}
+- {{improvement_description}}
+{{/short_term_improvements}}
+
+### Long-term Evolution (3+ months)
+{{#long_term_evolution}}
+- {{evolution_description}}
+{{/long_term_evolution}}
+
+## Next Review
+- **Scheduled Date**: {{next_review_date}}
+- **Focus Areas**: {{focus_areas}}
+- **Success Metrics**: {{success_metrics}}
+
+---
+*Generated from Nexus v5 Evolution Reflection Template*

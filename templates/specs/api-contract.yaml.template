@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: {{api_name}}
+  description: {{api_description}}
+  version: {{api_version}}
+  contact:
+    name: {{contact_name}}
+    email: {{contact_email}}
+
+servers:
+  - url: {{base_url}}
+    description: {{environment_description}}
+
+paths:
+  {{#endpoints}}
+  {{endpoint_path}}:
+    {{http_method}}:
+      summary: {{endpoint_summary}}
+      description: {{endpoint_description}}
+      tags:
+        - {{tag_name}}
+      parameters:
+        {{#parameters}}
+        - name: {{param_name}}
+          in: {{param_location}}
+          required: {{param_required}}
+          schema:
+            type: {{param_type}}
+          description: {{param_description}}
+        {{/parameters}}
+      requestBody:
+        required: {{request_body_required}}
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/{{request_schema}}'
+      responses:
+        '{{response_code}}':
+          description: {{response_description}}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/{{response_schema}}'
+  {{/endpoints}}
+
+components:
+  schemas:
+    {{#schemas}}
+    {{schema_name}}:
+      type: object
+      required:
+        {{#required_fields}}
+        - {{field_name}}
+        {{/required_fields}}
+      properties:
+        {{#properties}}
+        {{property_name}}:
+          type: {{property_type}}
+          description: {{property_description}}
+          {{#property_format}}format: {{property_format}}{{/property_format}}
+        {{/properties}}
+    {{/schemas}}
+
+  securitySchemes:
+    {{security_scheme_name}}:
+      type: {{security_type}}
+      {{#bearer_format}}bearerFormat: {{bearer_format}}{{/bearer_format}}
+      description: {{security_description}}
+
+security:
+  - {{security_scheme_name}}: []
+
+# Evolution Tracking
+x-nexus-metadata:
+  version: {{template_version}}
+  created: {{creation_date}}
+  last_updated: {{last_updated}}
+  review_cycle: {{review_frequency}}
+  owner: {{api_owner}}

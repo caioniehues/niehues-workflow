@@ -1,0 +1,90 @@
+# Security Pattern: {{pattern_name}}
+
+## Pattern Overview
+**Category**: {{security_category}}
+**Threat Level**: {{threat_level}}
+**Compliance**: {{compliance_standards}}
+**Created**: {{creation_date}}
+
+## Security Problem
+{{security_problem_description}}
+
+## Threat Model
+### Attack Vectors
+{{#attack_vectors}}
+- **{{vector_name}}**: {{vector_description}}
+  - **Likelihood**: {{likelihood}}
+  - **Impact**: {{impact}}
+{{/attack_vectors}}
+
+### Assets Protected
+{{#protected_assets}}
+- {{asset_name}}: {{asset_description}}
+{{/protected_assets}}
+
+## Solution
+{{solution_description}}
+
+## Security Controls
+{{#controls}}
+### {{control_name}}
+- **Type**: {{control_type}}
+- **Implementation**: {{control_implementation}}
+- **Effectiveness**: {{effectiveness_rating}}
+{{/controls}}
+
+## Implementation Pattern
+```{{language}}
+{{security_implementation}}
+```
+
+## Configuration Example
+```{{config_format}}
+{{configuration_example}}
+```
+
+## Validation Tests
+```{{language}}
+{{security_tests}}
+```
+
+## Compliance Mapping
+{{#compliance_requirements}}
+- **{{standard_name}}**: {{requirement_mapping}}
+{{/compliance_requirements}}
+
+## Risk Assessment
+- **Residual Risk**: {{residual_risk}}
+- **Risk Mitigation**: {{risk_mitigation}}
+- **Monitoring Requirements**: {{monitoring_requirements}}
+
+## Related Security Patterns
+{{#related_patterns}}
+- **{{pattern_name}}**: {{relationship_description}}
+{{/related_patterns}}
+
+## Security Best Practices
+{{#best_practices}}
+- {{practice}}
+{{/best_practices}}
+
+## Common Mistakes
+{{#common_mistakes}}
+- **Mistake**: {{mistake_description}}
+- **Consequence**: {{consequence}}
+- **Prevention**: {{prevention_strategy}}
+{{/common_mistakes}}
+
+## Evolution History
+- **Version**: {{version}}
+- **Usage Count**: {{usage_count}}
+- **Last Updated**: {{last_updated}}
+- **Security Review Date**: {{security_review_date}}
+
+## Extraction Metadata
+- **Source Project**: {{source_project}}
+- **Detection Threshold**: {{detection_threshold}}
+- **Confidence Score**: {{confidence_score}}
+
+---
+*Generated from Nexus v5 Security Pattern Template*

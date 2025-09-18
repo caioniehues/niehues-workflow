@@ -1,0 +1,43 @@
+# {{project_name}} Decision Log
+
+## Decision {{decision_id}}: {{decision_title}}
+
+**Date**: {{decision_date}}
+**Status**: {{status}}
+**Deciders**: {{deciders}}
+
+### Context
+{{decision_context}}
+
+### Problem Statement
+{{problem_statement}}
+
+### Options Considered
+{{#options}}
+#### Option {{option_number}}: {{option_name}}
+- **Pros**: {{pros}}
+- **Cons**: {{cons}}
+- **Impact**: {{impact_assessment}}
+{{/options}}
+
+### Decision
+**Chosen Option**: {{chosen_option}}
+**Rationale**: {{decision_rationale}}
+
+### Consequences
+- **Positive**: {{positive_consequences}}
+- **Negative**: {{negative_consequences}}
+- **Risks**: {{identified_risks}}
+
+### Implementation
+- **Timeline**: {{implementation_timeline}}
+- **Responsibilities**: {{responsibilities}}
+- **Success Criteria**: {{success_criteria}}
+
+### Evolution Tracking
+- **Review Date**: {{review_date}}
+- **Status**: {{current_status}}
+- **Lessons Learned**: {{lessons_learned}}
+
+---
+*Generated from Nexus v5 Decision Template*

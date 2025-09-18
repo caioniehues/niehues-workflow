@@ -1,210 +1,143 @@
 ---
-command: nexus-specify
-description: Create detailed Software Requirements Specification through adaptive questioning
-tools:
-  - Read
-  - Write
-  - TodoWrite
-arguments:
-  - name: topic
-    description: The topic or feature to specify
-    required: true
-  - name: --brainstorm
-    description: Path to brainstorm session file to use as input
-    required: false
-  - name: --confidence
-    description: Target confidence level (default 85%)
-    required: false
-  - name: --max-questions
-    description: Maximum questions to ask (default 200)
-    required: false
-  - name: --output
-    description: Output directory (default .nexus/specs/monolithic/)
-    required: false
+name: nexus-specify
+description: Create formal, testable specifications with acceptance criteria
+tools: Read, Write, Task, TodoWrite
+implementation: .claude/commands/nexus-specify.md
 ---
 
-# Nexus Specify Command
+# /nexus-specify [feature]
 
-Create comprehensive Software Requirements Specifications through adaptive questioning that continues until reaching the target confidence level.
+Transform brainstormed approaches into formal, testable specifications.
 
-## Usage
-```
-/nexus-specify <topic> [--brainstorm=<file>] [--confidence=85] [--max-questions=200]
-```
+<pre_flight>
+  <check id="brainstorm_exists">
+    Check for recent brainstorm on topic
+    Load brainstorm context if available
+  </check>
 
-## What It Does
+  <check id="selected_approach">
+    Identify which approach to specify
+    If unclear: Ask for clarification
+  </check>
+</pre_flight>
 
-The specify command transforms ideas into formal specifications by:
-- Asking adaptive questions based on gaps in understanding
-- Continuing until reaching target confidence (default 85%)
-- Extracting functional and non-functional requirements
-- Generating user stories and use cases
-- Defining technical architecture
-- Creating test scenarios and acceptance criteria
-- Identifying edge cases and risks
+<process_flow>
+  <step number="1" subagent="specification-agent">
+    **Create Functional Requirements**
 
-## Process
+    For each requirement:
+    - Unique identifier (FR-001, FR-002...)
+    - Clear description
+    - Testable acceptance criteria
+    - Edge cases
+    - Error conditions
+    - Performance requirements
+  </step>
 
-### 1. Context Gathering
-- Problem statement
-- Solution overview
-- Executive summary
-- Primary users and stakeholders
-- Success metrics
+  <step number="2" subagent="api-designer">
+    **Design API Contracts**
 
-### 2. Adaptive Questioning
-The engine asks questions across five categories:
-- **Functional**: What the system must do
-- **Non-functional**: Performance, security, scalability
-- **Technical**: Architecture, technology stack
-- **Business**: Timeline, budget, constraints
-- **Edge Cases**: Error scenarios, exceptions
+    Define:
+    - Endpoint specifications
+    - Request/response formats
+    - Data models
+    - Validation rules
+    - Error responses
+    - Rate limiting
+  </step>
 
-Questions continue until:
-- Target confidence is reached (default 85%)
-- Maximum questions limit is reached
-- All critical areas are covered
+  <step number="3" subagent="test-strategist">
+    **Define Test Strategy**
 
-### 3. Requirements Extraction
-- Functional requirements with acceptance criteria
-- Non-functional requirements with metrics
-- User stories in standard format
-- Use cases with flows and exceptions
+    Specify:
+    - Unit test requirements
+    - Integration test scenarios
+    - E2E test cases
+    - Performance benchmarks
+    - Security test cases
+    - Mock/stub strategy
+  </step>
 
-### 4. Technical Specification
-- System architecture overview
-- Component definitions
-- Data model and entities
-- API specifications
-- Integration points
+  <step number="4" subagent="questioning-agent">
+    **Clarification Questions**
 
-### 5. Validation & Testing
-- Test scenarios for each requirement
-- Acceptance criteria validation
-- Edge case identification
-- Risk assessment and mitigation
+    Resolve any ambiguities:
+    - Unclear requirements
+    - Missing edge cases
+    - Undefined behaviors
+    - Integration uncertainties
 
-### 6. Documentation Generation
-Produces a complete SRS document including:
-- Executive summary
-- Requirements (functional/non-functional)
-- User stories and use cases
-- Technical architecture
-- Data model
-- API specifications
-- Testing strategy
-- Deployment approach
-- Success metrics
-- Risk register
+    Continue until specification complete
+  </step>
 
-## Examples
+  <step number="5">
+    **Generate Specification Document**
 
-### Basic Specification
-```
-/nexus-specify "user authentication system"
-```
-Creates a specification through interactive questioning.
+    Structure:
+    # Feature: [Name]
+    Version: 1.0
+    Date: [timestamp]
+    Status: Draft
 
-### From Brainstorm Session
-```
-/nexus-specify "payment processing" --brainstorm=".nexus/brainstorms/2024-01-15-payment-processing.md"
-```
-Uses a previous brainstorm session as input context.
+    ## Overview
+    [Feature description]
 
-### High Confidence Specification
-```
-/nexus-specify "critical security module" --confidence=95
-```
-Continues questioning until 95% confidence is reached.
+    ## Functional Requirements
+    [All FRs with acceptance criteria]
 
-### Limited Questioning
-```
-/nexus-specify "simple CRUD API" --max-questions=50
-```
-Limits questioning to 50 questions maximum.
+    ## Non-Functional Requirements
+    - Performance
+    - Security
+    - Scalability
+    - Maintainability
 
-## Output
+    ## API Specifications
+    [Complete API documentation]
 
-The command generates a markdown SRS document containing:
+    ## Data Models
+    [All data structures]
 
-```markdown
-# Software Requirements Specification
-## [Topic]
-Version: 1.0.0
-Confidence: 85%
-Questions Asked: 47
+    ## Test Requirements
+    [Test strategy and cases]
 
-## Executive Summary
-[High-level overview]
+    ## Dependencies
+    [External dependencies]
 
-## Problem Statement
-[Problem being solved]
+    ## Risks
+    [Identified risks and mitigations]
+  </step>
 
-## Functional Requirements
-### FR-1: [Requirement]
-Priority: Must-have
-Acceptance Criteria:
-- Given...
-- When...
-- Then...
+  <step number="6">
+    **Sharding Decision**
 
-## Non-Functional Requirements
-### NFR-1: [Requirement]
-Priority: Should-have
-Metric: [Measurable target]
+    If specification > 500 lines:
+    - Create epic-level shard
+    - Break into story shards
+    - Maintain linking structure
 
-## User Stories
-### US-1: As a [user], I want [feature], so that [benefit]
+    Save to appropriate location:
+    - Monolithic: .nexus/specs/monolithic/
+    - Sharded: .nexus/specs/sharded/
+  </step>
 
-## Technical Architecture
-[Architecture overview and decisions]
+  <step number="7">
+    **Update Decision Log**
 
-## Data Model
-[Entities and relationships]
+    Record in .nexus/decision-log.md:
+    - Specification decisions
+    - Trade-offs made
+    - Assumptions documented
+  </step>
+</process_flow>
 
-## API Specification
-[Endpoints and contracts]
-
-## Testing Strategy
-[Test levels and coverage targets]
-
-## Risk Register
-[Identified risks and mitigations]
-```
-
-## Best Practices
-
-1. **Prepare Context**: Have problem statement and high-level solution ready
-2. **Answer Thoroughly**: More detailed answers lead to better specifications
-3. **Be Specific**: Concrete examples help the engine understand requirements
-4. **Consider Edge Cases**: Think about what could go wrong
-5. **Review Output**: The specification is a starting point for refinement
-
-## Integration
-
-After specification:
-1. Use `/nexus-shard` to break down large specifications
-2. Use `/nexus-decompose` to create implementation tasks
-3. Use `/nexus-implement` for TDD development
-4. Track progress with `/nexus-metrics`
-
-## Confidence Levels
-
-- **< 50%**: Very incomplete, many unknowns
-- **50-70%**: Basic understanding, gaps remain
-- **70-85%**: Good specification, ready for review
-- **85-95%**: Comprehensive, ready for implementation
-- **> 95%**: Highly detailed, all edge cases covered
-
-## Metrics Tracked
-
-- Total questions asked
-- Final confidence achieved
-- Time to specification
-- Requirements extracted
-- Edge cases identified
-
-## Related Commands
-- `/nexus-brainstorm`: Generate ideas before specification
-- `/nexus-shard`: Break down large specifications
-- `/nexus-validate`: Validate specification completeness
+<gates>
+  <gate id="testability">
+    All requirements have test criteria
+  </gate>
+  <gate id="completeness">
+    No undefined behaviors
+  </gate>
+  <gate id="approval">
+    User reviews and approves specification
+  </gate>
+</gates>
