@@ -1016,6 +1016,7 @@ Prompt: "Implement user authentication with TDD"
 ```
 
 ### Advanced Usage
+
 ```bash
 # Property-based TDD
 Use Task tool with subagent_type="tdd-enforcer"
@@ -1029,6 +1030,7 @@ Implement sorting algorithm with TDD:
 ```
 
 ### Legacy Code TDD
+
 ```bash
 # Characterization tests for legacy code
 Use Task tool with subagent_type="tdd-enforcer"
@@ -1036,6 +1038,7 @@ Prompt: "Add tests to legacy PaymentProcessor before refactoring"
 ```
 
 ## Example Interactions
+
 - "Write comprehensive tests for shopping cart that must fail first"
 - "Implement minimal code to make the user registration tests pass"
 - "Refactor the authentication module while keeping all tests green"
@@ -1043,6 +1046,7 @@ Prompt: "Add tests to legacy PaymentProcessor before refactoring"
 - "Create characterization tests for legacy billing system"
 
 ## Anti-Patterns to Avoid
+
 - Writing implementation before tests (test-after)
 - Writing tests that don't actually test anything
 - Over-mocking to the point of not testing real behavior
@@ -1050,6 +1054,7 @@ Prompt: "Add tests to legacy PaymentProcessor before refactoring"
 - Writing multiple tests before seeing first one fail
 
 ## Success Metrics
+
 - 100% test-first compliance
 - Average cycle time < 15 minutes
 - Test coverage > 80%
@@ -1057,6 +1062,7 @@ Prompt: "Add tests to legacy PaymentProcessor before refactoring"
 - Mutation score > 75%
 
 ## Evolution Triggers
+
 <evolution>
   <trigger condition="repeated_test_pattern">
     SUGGEST: Extract test utility or helper
@@ -1072,12 +1078,14 @@ Prompt: "Add tests to legacy PaymentProcessor before refactoring"
 </evolution>
 
 ## Related Agents
+
 - test-strategist: Helps design comprehensive test approach
 - pattern-detector: Identifies test patterns for reuse
 - refactoring-specialist: Assists in refactor phase
 - code-archaeologist: Helps understand legacy code for testing
 
 ## Troubleshooting
+
 <issue name="Tests Not Failing">
   Symptom: Test passes immediately when it should fail
   Cause: Test not actually testing the requirement
@@ -1689,6 +1697,7 @@ What this pattern solves
 ```{language}
 // Reusable code structure
 ```
+
 </template>
 
 <usage>
@@ -1835,6 +1844,7 @@ Prompt: "{Basic task description}"
 ```
 
 ### Advanced Usage
+
 ```bash
 # Complex workflow
 Use Task tool with subagent_type="{agent-name}"
@@ -1847,6 +1857,7 @@ Prompt: "
 ```
 
 ### Integration Example
+
 ```bash
 # Working with other agents
 1. Use {agent-name} for {initial task}
@@ -1855,6 +1866,7 @@ Prompt: "
 ```
 
 ## Example Interactions
+
 - "{Specific task example 1 that showcases core capability}"
 - "{Complex scenario demonstrating advanced features}"
 - "{Integration example showing collaboration with other agents}"
@@ -1862,17 +1874,20 @@ Prompt: "
 - "{Performance optimization example}"
 
 ## Anti-Patterns to Avoid
+
 - {Common mistake 1 and why it's problematic}
 - {Common mistake 2 and how to prevent it}
 - {Misuse scenario and correct approach}
 
 ## Success Metrics
+
 - {Measurable outcome 1}
 - {Quality indicator 2}
 - {Performance metric 3}
 - {User satisfaction indicator}
 
 ## Evolution Triggers
+
 <evolution>
   <trigger condition="{pattern detected}">
     SUGGEST: {improvement or new pattern}
@@ -1884,11 +1899,13 @@ Prompt: "
 </evolution>
 
 ## Related Agents
+
 - {agent-1}: {when to use instead or together}
 - {agent-2}: {how they complement each other}
 - {agent-3}: {workflow dependencies}
 
 ## Troubleshooting
+
 <issue name="{Common Problem}">
   Symptom: {What user observes}
   Cause: {Root cause}
@@ -1982,6 +1999,7 @@ CREATE INDEX idx_questions_template ON nexus.questions(added_to_template) WHERE 
 ## CLI Operations
 
 ### Context Operations
+
 ```bash
 # Create context
 create_context() {
@@ -2037,6 +2055,7 @@ get_context() {
 ```
 
 ### Decision Recording
+
 ```bash
 record_decision() {
     local context_id="$1"
@@ -2056,6 +2075,7 @@ record_decision() {
 ```
 
 ### Pattern Management
+
 ```bash
 extract_pattern() {
     local context_id="$1"
@@ -2077,6 +2097,7 @@ extract_pattern() {
 ## Redis Caching Strategy
 
 ### Key Patterns
+
 ```bash
 # Current state
 nexus:current:phase        # Active workflow phase
@@ -2095,6 +2116,7 @@ nexus:questions:recent     # Last 50 questions
 ```
 
 ### Usage Examples
+
 ```bash
 # Set current phase
 redis-cli SET "nexus:current:phase" "implement"
@@ -2213,6 +2235,7 @@ Global Project Context
 ```
 
 Each level inherits from its parent, with conflicts resolved by proximity (nearest wins).
+
 ```
 
 ---
@@ -2250,6 +2273,7 @@ The orchestrator coordinates workflow execution through three entry points:
 ```
 
 **B. Continuation**: "Continue nexus workflow" resumes from saved state
+
 ```bash
 # Orchestrator reads .nexus/state/current-phase.md
 # Determines next tasks from .nexus/tasks/pending.md
@@ -2257,6 +2281,7 @@ The orchestrator coordinates workflow execution through three entry points:
 ```
 
 **C. Explicit Task**: "Run task T003" executes specific task
+
 ```bash
 # Orchestrator reads .nexus/tasks/T003/definition.md
 # Launches targeted sub-agent with task context
@@ -2559,6 +2584,7 @@ echo "Completed: $SUCCESS_COUNT/4 tasks"
 ```
 
 **Key Limitations & Realities:**
+
 - No real-time progress updates from Task agents
 - Maximum 7 parallel tasks per message
 - All tasks in a batch complete before next batch
@@ -2687,6 +2713,7 @@ FINAL_CONTEXT="$CORE_CONTEXT $PHASE_CONTEXT $DEP_CONTEXT"
 ```
 
 **If Conflicts Occur:**
+
 - Orchestrator detects during result verification
 - User resolves manually (rare case)
 - Tasks are designed to minimize this possibility
@@ -3109,16 +3136,19 @@ Moving beyond simple commands to context-aware, intelligent orchestration.
 #### Basic Commands → Intelligent Commands
 
 **Traditional**:
+
 ```bash
 /nexus-brainstorm  # Simple trigger
 ```
 
 **Enhanced**:
+
 ```bash
 /nexus-brainstorm --context "e-commerce checkout" --depth 3 --focus "security, performance"
 ```
 
 **Natural Language** (Preferred):
+
 ```
 "Brainstorm approaches for the e-commerce checkout, focusing on security and performance"
 ```
@@ -3146,6 +3176,7 @@ EOF
 ```
 
 **Natural Language Equivalent**:
+
 - "Initialize nexus workflow for this project"
 - "Set up nexus enhanced workflow"
 
@@ -3308,12 +3339,14 @@ else:
 ### Command Chaining
 
 **Sequential Execution**:
+
 ```bash
 "Brainstorm, specify, and decompose the payment feature"
 # Orchestrator executes phases in sequence
 ```
 
 **Conditional Execution**:
+
 ```bash
 "If all tests pass, deploy to staging"
 # Orchestrator checks conditions before proceeding
@@ -3322,6 +3355,7 @@ else:
 ### Interactive Commands
 
 **Progressive Disclosure**:
+
 ```
 User: "Implement authentication"
 Orchestrator: "I need to understand your requirements first. What type of authentication?"
@@ -3340,6 +3374,7 @@ Orchestrator: "Should sessions expire? What's the token lifetime?"
 4. **State Triggers**: File modifications that orchestrator detects
 
 Example implementation:
+
 ```bash
 # .nexus/commands/nexus-decompose.sh
 #!/bin/bash
@@ -3362,6 +3397,7 @@ Let's walk through a complete, realistic example of the Nexus workflow in action
 **Orchestrator Actions**:
 
 <function_calls>
+
 ```python
 # 1. Create directory structure
 Bash("mkdir -p .nexus/{constitution,specs,tasks,patterns,state,context}")
@@ -3414,6 +3450,7 @@ Task(
 ```
 
 **Result**: `.nexus/brainstorms/user-management-approaches.md`
+
 ```markdown
 ## User Management Approaches
 
@@ -3486,6 +3523,7 @@ Task(
 ```
 
 **Result**: `.nexus/tasks/pending.md`
+
 ```markdown
 ## User Management Tasks
 
@@ -3606,6 +3644,7 @@ Task(
 ```
 
 **Result**: `.nexus/patterns/api-patterns.md`
+
 ```markdown
 ## Extracted Patterns
 
@@ -3620,6 +3659,7 @@ def verify_token(token: str) -> dict:
 ```
 
 ### Input Validation Pattern
+
 ```python
 @validator('email')
 def validate_email(cls, v):
@@ -3629,6 +3669,7 @@ def validate_email(cls, v):
 ```
 
 Reuse these patterns in future authentication tasks.
+
 ```
 
 #### Workflow Completion
@@ -3676,16 +3717,19 @@ Reuse these patterns in future authentication tasks.
 ### Adaptation for Different Projects
 
 **Frontend React App**:
+
 - Constitution: React, TypeScript, Jest, Cypress
 - Tasks: Components, hooks, tests, stories
 - Patterns: Component patterns, state management
 
 **Data Pipeline**:
+
 - Constitution: Python, Airflow, pytest
 - Tasks: ETL functions, DAGs, data validation
 - Patterns: Transformation patterns, error handling
 
 **Mobile App**:
+
 - Constitution: Flutter, Dart, Firebase
 - Tasks: Screens, widgets, state, API client
 - Patterns: Widget composition, navigation
@@ -3719,6 +3763,7 @@ The Nexus Enhanced Workflow represents a practical, implementable system that le
 ### When to Use Nexus
 
 **Ideal For**:
+
 - New feature development
 - Complex refactoring projects
 - API development
@@ -3727,6 +3772,7 @@ The Nexus Enhanced Workflow represents a practical, implementable system that le
 - Code migration projects
 
 **Not Ideal For**:
+
 - Simple bug fixes
 - Minor text changes
 - Emergency hotfixes
